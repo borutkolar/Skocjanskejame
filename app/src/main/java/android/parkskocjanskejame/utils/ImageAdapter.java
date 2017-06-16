@@ -81,7 +81,6 @@ public class ImageAdapter extends BaseAdapter {
                     viewHolder.checkBox.setChecked(false);
                     checkboxSelection[idCheckbox] = false;
                 } else {
-                    mediaPlayer.start();
                     viewHolder.checkBox.setChecked(true);
                     checkboxSelection[idCheckbox] = true;
                 }
@@ -97,11 +96,6 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     private void popupWindow() {
-        /*LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View layout = inflater.inflate(R.layout.popup, null);
-        pwindo = new PopupWindow(layout, ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, true);
-        pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);*/
-
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         View v = inflater.inflate(R.layout.popup, null);
         alertDialog.setView(v);

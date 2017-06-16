@@ -1,6 +1,7 @@
 package android.parkskocjanskejame;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.Image;
 import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.ExpandableHeightGridView;
@@ -34,8 +35,6 @@ public class Tabla3b extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla3b);
 
-        Constants.status++;
-
         ExpandableHeightGridView tabla3bGridView = (ExpandableHeightGridView) findViewById(R.id.tabla3bGrid);
         tabla3bGridView.setExpanded(true);
         tabla3bGridView.setAdapter(new ImageAdapter(Tabla3b.this, R.layout.gridview, tabla3bImages, tabla3bSounds, tabla3bCheckboxSelection));
@@ -50,7 +49,8 @@ public class Tabla3b extends AppCompatActivity {
                         tabla3bCheckboxSelection[1] == false &&
                         tabla3bCheckboxSelection[2] == false &&
                         tabla3bCheckboxSelection[5] == false) {
-                    Toast.makeText(getApplicationContext(), "Pravilen odgovor!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(getApplicationContext(), Cestitamo.class);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "Napačen odgovor!", Toast.LENGTH_LONG).show();
                 }

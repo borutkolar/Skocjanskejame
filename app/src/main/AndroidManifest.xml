@@ -32,7 +32,8 @@
         <activity android:name=".NFCScan" />
         <activity android:name=".Tabla1" />
         <activity android:name=".Status" />
-        <activity android:name=".Tabla3b"></activity>
+        <activity android:name=".Tabla3b" />
+        <activity android:name=".Cestitamo"></activity>
     </application>
 
 </manifest>
