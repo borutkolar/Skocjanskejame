@@ -1,11 +1,16 @@
 package android.parkskocjanskejame;
 
+import android.content.Context;
 import android.content.Intent;
 import android.parkskocjanskejame.utils.Constants;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.PopupWindow;
 
 public class Tabla1 extends AppCompatActivity {
 
