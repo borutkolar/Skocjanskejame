@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    tools:context="android.parkskocjanskejame.HomeScreen">
+
+    <android.parkskocjanskejame.utils.CustomTextView
+        android:id="@+id/homescreenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/homeScreen"
+        android:textSize="50dp"
+        android:textColor="@color/textColor"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <android.parkskocjanskejame.utils.CustomButton
+        android:id="@+id/homescreenButton"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:text="@string/zacni"
+        android:textSize="20dp"
+        android:textColor="@color/buttonTextColor"
+        android:background="@drawable/custombutton"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp" />
+
+    <ImageView
+        android:id="@+id/homescreenImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/nfcboard"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/homescreenText"
+        android:layout_alignStart="@+id/homescreenButton" />
+
+</RelativeLayout>

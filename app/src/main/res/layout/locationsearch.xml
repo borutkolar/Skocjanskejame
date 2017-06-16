@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    tools:context="android.parkskocjanskejame.LocationSearch">
+
+    <android.parkskocjanskejame.utils.CustomTextView
+        android:id="@+id/locationsearchText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iskanjeLokacije"
+        android:textColor="@color/textColor"
+        android:textSize="40dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <android.parkskocjanskejame.utils.CustomTextView
+        android:id="@+id/locationsearchText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/locationSearch"
+        android:textColor="@color/textColor"
+        android:textSize="40dp"
+        android:gravity="center"
+        android:layout_below="@+id/locationsearchImage"
+        android:layout_alignStart="@+id/locationsearchText1"
+        android:layout_marginTop="47dp"
+        android:layout_alignEnd="@+id/locationsearchText1" />
+
+    <ImageView
+        android:id="@+id/locationsearchImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/gpssatellite"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/locationsearchText1"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
