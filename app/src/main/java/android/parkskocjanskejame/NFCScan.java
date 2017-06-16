@@ -16,6 +16,8 @@ import android.test.mock.MockPackageManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import static android.parkskocjanskejame.R.id.nfcscanButton;
+
 public class NFCScan extends AppCompatActivity {
     GPSTracker gpsTracker;
     double latitude, longitude;
@@ -34,8 +36,8 @@ public class NFCScan extends AppCompatActivity {
         Button nfcscanButton = (Button) findViewById(R.id.nfcscanButton);
         nfcscanButton.setAlpha(0.2f);
 
-        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        vibrator.vibrate(vibrations, -1);
+        /*Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(vibrations, -1);*/
 
         try {
             if (ActivityCompat.checkSelfPermission(this, mPermission) != MockPackageManager.PERMISSION_GRANTED) {
@@ -65,23 +67,48 @@ public class NFCScan extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(Intent intent) {
-        Intent i = new Intent(this, Tabla1.class);
-        startActivity(i);
+        switch (Constants.counter) {
+            case 0:
+                Intent i0 = new Intent(this, Tabla1.class);
+                startActivity(i0);
+            case 1:
+                Intent i1 = new Intent(this, Tabla3b.class);
+                startActivity(i1);
+                break;
+            case 2:
+                Intent i2 = new Intent(this, Tabla4.class);
+                startActivity(i2);
+        }
 
         super.onNewIntent(intent);
     }
 
     @Override
     protected void onResume() {
-        Intent intent = new Intent(this, Tabla1.class);
-        intent.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-        IntentFilter[] intentFilter = new IntentFilter[]{};
-
-        nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
-
-        super.onResume();
+        switch (Constants.counter) {
+            case 0:
+                Intent intent0 = new Intent(this, Tabla1.class);
+                intent0.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent0, 0);
+                IntentFilter[] intentFilter = new IntentFilter[]{};
+                nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+                super.onResume();
+            case 1:
+                Intent intent1 = new Intent(this, Tabla3b.class);
+                intent1.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+                pendingIntent = PendingIntent.getActivity(this, 0, intent1, 0);
+                intentFilter = new IntentFilter[]{};
+                nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+                super.onResume();
+                break;
+            case 2:
+                Intent intent2 = new Intent(this, Tabla4.class);
+                intent2.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+                pendingIntent = PendingIntent.getActivity(this, 0, intent2, 0);
+                intentFilter = new IntentFilter[]{};
+                nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+                super.onResume();
+        }
     }
 
     @Override

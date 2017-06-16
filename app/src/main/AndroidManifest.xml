@@ -33,7 +33,8 @@
         <activity android:name=".Tabla1" />
         <activity android:name=".Status" />
         <activity android:name=".Tabla3b" />
-        <activity android:name=".Cestitamo"></activity>
+        <activity android:name=".Cestitamo" />
+        <activity android:name=".Tabla4"></activity>
     </application>
 
 </manifest>

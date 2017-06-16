@@ -22,6 +22,8 @@ public class Status extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.status);
 
+        Constants.counter++;
+
         TextView statusText2 = (TextView) findViewById(R.id.statusText2);
         statusText2.setText(Integer.toString(Constants.status));
 
@@ -48,10 +50,11 @@ public class Status extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(Status.this, Tabla3b.class);
+                Intent intent = new Intent(Status.this, NFCScan.class);
                 Status.this.startActivity(intent);
                 Status.this.finish();
             }
         }, 3000);
+
     }
 }
