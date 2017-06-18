@@ -10,12 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import static android.parkskocjanskejame.Tabla3b.tabla3bSounds;
+
 public class Tabla4 extends AppCompatActivity {
     public static boolean[] tabla3bCheckboxSelection = new boolean[6];
     public static Integer[] tabla3bImages =
             {};
-    public static Integer[] tabla3bSounds =
-            {R.raw.beep};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,12 +1,10 @@
 package android.parkskocjanskejame.utils;
 
 
-import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.parkskocjanskejame.R;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -97,7 +95,7 @@ public class ImageAdapter extends BaseAdapter {
 
     private void popupWindow() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
-        View v = inflater.inflate(R.layout.popup, null);
+        View v = inflater.inflate(R.layout.tabla3bpopup2, null);
         alertDialog.setView(v);
         alert = alertDialog.create();
         alert.show();
