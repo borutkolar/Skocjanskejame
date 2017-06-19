@@ -13,6 +13,7 @@ import android.parkskocjanskejame.utils.GPSTracker;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.test.mock.MockPackageManager;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -93,6 +94,7 @@ public class NFCScan extends AppCompatActivity {
                 IntentFilter[] intentFilter = new IntentFilter[]{};
                 nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
                 super.onResume();
+                break;
             case 1:
                 Intent intent1 = new Intent(this, Tabla3b.class);
                 intent1.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
@@ -108,6 +110,7 @@ public class NFCScan extends AppCompatActivity {
                 intentFilter = new IntentFilter[]{};
                 nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
                 super.onResume();
+                break;
         }
     }
 

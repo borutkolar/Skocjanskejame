@@ -11,11 +11,11 @@
         android:id="@+id/tabla1Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tabla1"
+        android:text="@string/cestitamo1"
         android:textColor="@color/textColor"
-        android:textSize="44dp"
+        android:textSize="35dp"
         android:gravity="center"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="31dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 

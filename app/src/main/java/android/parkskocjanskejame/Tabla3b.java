@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.parkskocjanskejame.utils.ExpandableHeightGridView;
+import android.parkskocjanskejame.utils.ImageAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -41,12 +42,14 @@ public class Tabla3b extends AppCompatActivity {
 
         ExpandableHeightGridView tabla3bGridView = (ExpandableHeightGridView) findViewById(R.id.tabla3bGrid);
         tabla3bGridView.setExpanded(true);
-        tabla3bGridView.setAdapter(new Tabla3bImageAdapter(Tabla3b.this));
+        final Tabla3bImageAdapter tabla3bImageAdapter = new Tabla3bImageAdapter(Tabla3b.this);
+        tabla3bGridView.setAdapter(tabla3bImageAdapter);
 
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                tabla3bImageAdapter.stopPlaying();
                 if (tabla3bCheckboxSelection[0] == true &&
                         tabla3bCheckboxSelection[1] == true &&
                         tabla3bCheckboxSelection[3] == true &&

@@ -13,7 +13,7 @@ import android.widget.Toast;
 import static android.parkskocjanskejame.Tabla3b.tabla3bSounds;
 
 public class Tabla4 extends AppCompatActivity {
-    public static boolean[] tabla3bCheckboxSelection = new boolean[6];
+    public static boolean[] tabla3bCheckboxSelection = new boolean[9];
     public static Integer[] tabla3bImages =
             {};
 
