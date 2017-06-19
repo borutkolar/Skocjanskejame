@@ -27,4 +27,10 @@
     <string name="tabla3bpopup4">Taščica (Erithacus rubecula) si gnezdo splete med gostimi koreninami v gozdu.</string>
     <string name="tabla3bpopup7">Bela štorklja (Ciconia ciconia) gnezdi v odprti kulturni krajini z dostopom do rek, močvirij in poplavnih ravnic.</string>
     <string name="tabla3bpopup9">Rečni galeb (Larus ridibundus) rad poseljuje območja s stoječimi vodnimi telesi v bližini človeka.</string>
+    <string name="tabla3a">Poraščenost z drevesi na tem mestu pred 100 leti je bila manjša.</string>
+    <string name="tabla3arazlaga">Zaradi paše in redne košnje je bil v preteklosti Kras gol.</string>
+    <string name="gumbZnova">Poskusi znova</string>
+    <string name="DA">DA</string>
+    <string name="NE">NE</string>
+    <string name="DrziVleci">Drzi in vleči</string>
 </resources>

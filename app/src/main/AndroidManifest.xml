@@ -28,13 +28,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LocationSearch" android:screenOrientation="portrait"/>
-        <activity android:name=".NFCScan" android:screenOrientation="portrait"/>
-        <activity android:name=".Tabla1" android:screenOrientation="portrait"/>
-        <activity android:name=".Status" android:screenOrientation="portrait"/>
-        <activity android:name=".Tabla3b" android:screenOrientation="portrait"/>
-        <activity android:name=".Cestitamo" android:screenOrientation="portrait"/>
-        <activity android:name=".Tabla4" android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".LocationSearch"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NFCScan"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Tabla1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Status"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Tabla3b"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Cestitamo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Tabla4"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Tabla3a"></activity>
     </application>
 
 </manifest>
