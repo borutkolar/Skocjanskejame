@@ -93,8 +93,9 @@ public class NFCScan extends AppCompatActivity {
                 IntentFilter[] intentFilter = new IntentFilter[]{};
                 nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
                 super.onResume();
+                break;
             case 1:
-                Intent intent1 = new Intent(this, Tabla3b.class);
+                Intent intent1 = new Intent(this, Tabla3a.class);
                 intent1.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
                 pendingIntent = PendingIntent.getActivity(this, 0, intent1, 0);
                 intentFilter = new IntentFilter[]{};
@@ -108,6 +109,7 @@ public class NFCScan extends AppCompatActivity {
                 intentFilter = new IntentFilter[]{};
                 nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
                 super.onResume();
+                break;
         }
     }
 
