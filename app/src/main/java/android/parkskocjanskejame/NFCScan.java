@@ -2,22 +2,17 @@ package android.parkskocjanskejame;
 
 import android.Manifest;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.GPSTracker;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.test.mock.MockPackageManager;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
-
-import static android.parkskocjanskejame.R.id.nfcscanButton;
 
 public class NFCScan extends AppCompatActivity {
     GPSTracker gpsTracker;
@@ -68,27 +63,14 @@ public class NFCScan extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(Intent intent) {
-        switch (Constants.counter) {
-            case 0:
-                Intent i0 = new Intent(this, Tabla1.class);
-                startActivity(i0);
-            case 1:
-                Intent i1 = new Intent(this, Tabla3b.class);
-                startActivity(i1);
-                break;
-            case 2:
-                Intent i2 = new Intent(this, Tabla4.class);
-                startActivity(i2);
-        }
-
         super.onNewIntent(intent);
     }
 
     @Override
     protected void onResume() {
-        switch (Constants.counter) {
+        switch (Constants.status) {
             case 0:
-                Intent intent0 = new Intent(this, Tabla1.class);
+                Intent intent0 = new Intent(this, Cestitamo.class);
                 intent0.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent0, 0);
                 IntentFilter[] intentFilter = new IntentFilter[]{};
@@ -111,13 +93,52 @@ public class NFCScan extends AppCompatActivity {
                 nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
                 super.onResume();
                 break;
+            case 3:
+                Intent intent3 = new Intent(this, Tabla7.class);
+                intent3.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+                pendingIntent = PendingIntent.getActivity(this, 0, intent3, 0);
+                intentFilter = new IntentFilter[]{};
+                nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+                super.onResume();
+                break;
+            case 4:
+                Intent intent4 = new Intent(this, Tabla10.class);
+                intent4.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+                pendingIntent = PendingIntent.getActivity(this, 0, intent4, 0);
+                intentFilter = new IntentFilter[]{};
+                nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+                super.onResume();
+                break;
+            case 5:
+                Intent intent5 = new Intent(this, Tabla16.class);
+                intent5.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+                pendingIntent = PendingIntent.getActivity(this, 0, intent5, 0);
+                intentFilter = new IntentFilter[]{};
+                nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+                super.onResume();
+                break;
+            case 6:
+                Intent intent6 = new Intent(this, Tabla19.class);
+                intent6.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+                pendingIntent = PendingIntent.getActivity(this, 0, intent6, 0);
+                intentFilter = new IntentFilter[]{};
+                nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+                super.onResume();
+                break;
+            case 7:
+                Intent intent7 = new Intent(this, Tabla26.class);
+                intent7.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
+                pendingIntent = PendingIntent.getActivity(this, 0, intent7, 0);
+                intentFilter = new IntentFilter[]{};
+                nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFilter, null);
+                super.onResume();
+                break;
         }
     }
 
     @Override
     protected void onPause() {
         nfcAdapter.disableForegroundDispatch(this);
-
         super.onPause();
     }
 }

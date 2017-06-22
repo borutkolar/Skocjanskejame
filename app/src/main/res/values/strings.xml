@@ -17,8 +17,6 @@
     <string name="naprej">Naprej</string>
     <string name="NFC">NFC ni vklopljen!</string>
     <string name="status">STATUS</string>
-    <string name="counter">0</string>
-    <string name="total">/8</string>
     <string name="status2">Pospravite telefon. V bližini naslednje značke vas bo telefon opozoril.</string>
     <string name="tabla3b">Odkljukaj slike ptic, ki živijo na prepadnih stenah.</string>
     <string name="odgovori">Odgovori</string>
@@ -29,8 +27,16 @@
     <string name="tabla3bpopup9">Rečni galeb (Larus ridibundus) rad poseljuje območja s stoječimi vodnimi telesi v bližini človeka.</string>
     <string name="tabla3a">Poraščenost z drevesi na tem mestu pred 100 leti je bila manjša.</string>
     <string name="tabla3arazlaga">Zaradi paše in redne košnje je bil v preteklosti Kras gol.</string>
+    <string name="tabla4popup0">Velika uharica (Bubo bubo) najpogosteje izbira visoke, suhe in razčlenjene strme stene za dnevno počivališče in gnezdišče.</string>
+    <string name="tabla4popup2">Navadni hudournik (Apus apus) si ustvarja gnezda v visokih stavbah, ki jih je ustvaril človek; npr. zvonik, pod strešniki, stolpi</string>
+    <string name="tabla4popup5">Rdečenogi martinec (Tringa totanus) gnezdi na mokrotnih travnikih z nizko vegetacijo in na obalnih slanih močvirjih.</string>
     <string name="gumbZnova">Poskusi znova</string>
     <string name="DA">DA</string>
     <string name="NE">NE</string>
     <string name="DrziVleci">Drzi in vleči</string>
+    <string name="zapri">Zapri</string>
+    <string name="tabla26">Ali prikazano na sliki sodi v kal?</string>
+    <string name="tabla26popup1">Zlata ribica je invazivna vrsta in s prehranjevanjem v kalu škoduje drugim vrstam.</string>
+    <string name="tabla26popup4">Želva rdečevratka je invazivna vrsta, saj z gnezdenjem izpodriva avtohtono vrsto želve, močvirsko sklednico.</string>
+    <string name="tabla26popup5">Gradbeni material ne sodi v kal, saj uničuje habitat številnim živalskim in rastlinskim vrstam.</string>
 </resources>

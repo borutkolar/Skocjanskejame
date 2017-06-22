@@ -1,15 +1,12 @@
 package android.parkskocjanskejame;
 
-import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.parkskocjanskejame.utils.ExpandableHeightGridView;
-import android.parkskocjanskejame.utils.ImageAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +14,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
-import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -32,8 +29,7 @@ public class Tabla3b extends AppCompatActivity {
     public static Integer[] tabla3bSounds =
             {R.raw.tabla3bsound0, R.raw.tabla3bsound1,
                     R.raw.tabla3bsound3, R.raw.tabla3bsound5,
-                    R.raw.tabla3bsound6, R.raw.tabla3bsound8,
-                    R.raw.tabla3bbeep};
+                    R.raw.tabla3bsound6, R.raw.tabla3bsound8};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +37,9 @@ public class Tabla3b extends AppCompatActivity {
         setContentView(R.layout.tabla3b);
 
         ExpandableHeightGridView tabla3bGridView = (ExpandableHeightGridView) findViewById(R.id.tabla3bGrid);
-        tabla3bGridView.setExpanded(true);
         final Tabla3bImageAdapter tabla3bImageAdapter = new Tabla3bImageAdapter(Tabla3b.this);
         tabla3bGridView.setAdapter(tabla3bImageAdapter);
+        tabla3bGridView.setExpanded(true);
 
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +110,7 @@ public class Tabla3b extends AppCompatActivity {
             viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    stopPlaying();
                     int idImage = viewHolder.imageView.getId();
                     createSound(idImage);
                     int idCheckbox = viewHolder.checkBox.getId();
@@ -140,32 +137,25 @@ public class Tabla3b extends AppCompatActivity {
         private void createSound(int imageID) {
             switch(imageID) {
                 case 0:
-                    stopPlaying();
                     mediaPlayer = MediaPlayer.create(context, tabla3bSounds[0]);
                     break;
                 case 1:
-                    stopPlaying();
                     mediaPlayer = MediaPlayer.create(context, tabla3bSounds[1]);
                     break;
                 case 3:
-                    stopPlaying();
                     mediaPlayer = MediaPlayer.create(context, tabla3bSounds[2]);
                     break;
                 case 5:
-                    stopPlaying();
                     mediaPlayer = MediaPlayer.create(context, tabla3bSounds[3]);
                     break;
                 case 6:
-                    stopPlaying();
                     mediaPlayer = MediaPlayer.create(context, tabla3bSounds[4]);
                     break;
                 case 8:
-                    stopPlaying();
                     mediaPlayer = MediaPlayer.create(context, tabla3bSounds[5]);
                     break;
                 default:
-                    stopPlaying();
-                    mediaPlayer = MediaPlayer.create(context, tabla3bSounds[6]);
+                    mediaPlayer = MediaPlayer.create(context, R.raw.beep);
                     break;
             }
         }
@@ -180,32 +170,35 @@ public class Tabla3b extends AppCompatActivity {
 
         private void showPopup(int imageID) {
             AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+            View v = inflater.inflate(R.layout.tablapopup, null);
+            alertDialog.setView(v);
+            alert = alertDialog.create();
+            TextView popupText = (TextView) v.findViewById(R.id.tablapopupText);
             switch(imageID) {
                 case 2:
-                    View v2 = inflater.inflate(R.layout.tabla3bpopup2, null);
-                    alertDialog.setView(v2);
-                    alert = alertDialog.create();
+                    popupText.setText(R.string.tabla3bpopup2);
                     alert.show();
                     break;
                 case 4:
-                    View v4 = inflater.inflate(R.layout.tabla3bpopup4, null);
-                    alertDialog.setView(v4);
-                    alert = alertDialog.create();
+                    popupText.setText(R.string.tabla3bpopup4);
                     alert.show();
                     break;
                 case 7:
-                    View v7 = inflater.inflate(R.layout.tabla3bpopup7, null);
-                    alertDialog.setView(v7);
-                    alert = alertDialog.create();
+                    popupText.setText(R.string.tabla3bpopup7);
                     alert.show();
                     break;
                 case 9:
-                    View v9 = inflater.inflate(R.layout.tabla3bpopup9, null);
-                    alertDialog.setView(v9);
-                    alert = alertDialog.create();
+                    popupText.setText(R.string.tabla3bpopup9);
                     alert.show();
                     break;
             }
+            Button popupButton = (Button) v.findViewById(R.id.tablapopupButton);
+            popupButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alert.cancel();
+                }
+            });
         }
     }
 }

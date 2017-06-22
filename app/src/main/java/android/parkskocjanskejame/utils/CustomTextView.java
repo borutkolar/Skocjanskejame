@@ -1,15 +1,9 @@
 package android.parkskocjanskejame.utils;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.text.AttributedCharacterIterator;
 
 /**
  * Created by Borut on 10. 06. 2017.

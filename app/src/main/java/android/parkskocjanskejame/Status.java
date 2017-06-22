@@ -22,8 +22,6 @@ public class Status extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.status);
 
-        Constants.counter++;
-
         TextView statusText2 = (TextView) findViewById(R.id.statusText2);
         statusText2.setText(Integer.toString(Constants.status));
 

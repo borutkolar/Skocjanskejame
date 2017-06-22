@@ -11,15 +11,15 @@
         android:id="@+id/cestitamoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cestitamo"
         android:textColor="@color/textColor"
-        android:textSize="60dp"
+        android:textSize="35dp"
+        android:text="Text"
         android:gravity="center"
-        android:layout_marginTop="44dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp" />
 
-    <Button
+    <android.parkskocjanskejame.utils.CustomButton
         android:id="@+id/cestitamoButton"
         android:layout_width="200dp"
         android:layout_height="80dp"
@@ -29,5 +29,5 @@
         android:textColor="@color/buttonTextColor"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="79dp" />
+        android:layout_marginBottom="44dp" />
 </RelativeLayout>

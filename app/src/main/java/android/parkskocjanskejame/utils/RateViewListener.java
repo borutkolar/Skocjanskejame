@@ -1,4 +1,4 @@
-package android.parkskocjanskejame;
+package android.parkskocjanskejame.utils;
 
 /**
  * Created by Nemanja on 22. 05. 2017.

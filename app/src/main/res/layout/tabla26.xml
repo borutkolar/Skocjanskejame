@@ -11,45 +11,45 @@
         android:focusableInTouchMode="true">
 
         <android.parkskocjanskejame.utils.CustomTextView
-            android:id="@+id/tabla4Text"
+            android:id="@+id/tabla26Text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tabla4"
+            android:text="@string/tabla26"
             android:textSize="25dp"
             android:textColor="@color/textColor"/>
 
         <android.parkskocjanskejame.utils.CustomTextView
-            android:id="@+id/tabla4Text2"
+            android:id="@+id/tabla26Text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
             android:textColor="@color/textColor"
             android:textSize="20dp"
-            android:layout_below="@+id/tabla4Text"
-            android:layout_alignStart="@+id/tabla4Text"
+            android:layout_below="@+id/tabla26Text"
+            android:layout_alignStart="@+id/tabla26Text"
             android:layout_marginTop="10dp"/>
 
         <android.parkskocjanskejame.utils.CustomTextView
-            android:id="@+id/tabla4Text3"
+            android:id="@+id/tabla26Text3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="/6"
+            android:text="/4"
             android:textColor="@color/textColor"
             android:textSize="20dp"
-            android:layout_alignBaseline="@+id/tabla4Text2"
-            android:layout_alignBottom="@+id/tabla4Text2"
-            android:layout_toEndOf="@+id/tabla4Text2"
+            android:layout_alignBaseline="@+id/tabla26Text2"
+            android:layout_alignBottom="@+id/tabla26Text2"
+            android:layout_toEndOf="@+id/tabla26Text2"
             android:layout_marginTop="10dp"/>
 
         <android.parkskocjanskejame.utils.ExpandableHeightGridView
-            android:id="@+id/tabla4Grid"
+            android:id="@+id/tabla26Grid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:numColumns="2"
             android:verticalSpacing="5dp"
             android:horizontalSpacing="5dp"
-            android:layout_below="@+id/tabla4Text3"/>
+            android:layout_below="@+id/tabla26Text3"/>
 
         <android.parkskocjanskejame.utils.CustomButton
             android:id="@+id/button"
@@ -59,6 +59,6 @@
             android:layout_margin="15dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/tabla4Grid"/>
+            android:layout_below="@id/tabla26Grid"/>
     </RelativeLayout>
 </ScrollView>

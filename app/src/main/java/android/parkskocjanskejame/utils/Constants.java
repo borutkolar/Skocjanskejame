@@ -6,5 +6,4 @@ package android.parkskocjanskejame.utils;
 
 public class Constants {
     public static int status = 0;
-    public static int counter = 0;
 }

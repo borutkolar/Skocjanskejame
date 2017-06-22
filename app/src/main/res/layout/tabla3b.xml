@@ -4,37 +4,63 @@
     android:layout_height="match_parent"
     android:layout_margin="20dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:focusableInTouchMode="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
 
         <android.parkskocjanskejame.utils.CustomTextView
             android:id="@+id/tabla3bText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tabla3b"
-            android:textSize="30dp"
-            android:textColor="@color/textColor"/>
+            android:textColor="@color/textColor"
+            android:textSize="30dp" />
+
+        <android.parkskocjanskejame.utils.CustomTextView
+            android:id="@+id/tabla3bText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:layout_below="@+id/tabla3bText"
+            android:layout_alignStart="@+id/tabla3bText"
+            android:layout_marginTop="10dp"/>
+
+        <android.parkskocjanskejame.utils.CustomTextView
+            android:id="@+id/tabla3bText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/6"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:layout_alignBaseline="@+id/tabla3bText2"
+            android:layout_alignBottom="@+id/tabla3bText2"
+            android:layout_toEndOf="@+id/tabla3bText2"
+            android:layout_marginTop="10dp"/>
 
         <android.parkskocjanskejame.utils.ExpandableHeightGridView
             android:id="@+id/tabla3bGrid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:horizontalSpacing="5dp"
             android:numColumns="2"
             android:verticalSpacing="5dp"
-            android:horizontalSpacing="5dp"/>
+            android:layout_below="@+id/tabla3bText3" />
 
-        <Button
+        <android.parkskocjanskejame.utils.CustomButton
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Odgovori"
-            android:layout_margin="15dp"
             android:layout_alignParentBottom="true"
+            android:layout_below="@id/tabla3bGrid"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/tabla3bGrid"/>
-    </LinearLayout>
+            android:layout_margin="15dp"
+            android:text="Odgovori" />
+    </RelativeLayout>
 </ScrollView>

@@ -1,4 +1,4 @@
-package android.parkskocjanskejame;
+package android.parkskocjanskejame.utils;
 
 import android.graphics.Matrix;
 
@@ -6,17 +6,15 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.os.Vibrator;
 import android.parkskocjanskejame.R;
+import android.parkskocjanskejame.utils.RateViewListener;
 import android.support.v4.content.ContextCompat;
-import android.text.GetChars;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
-import static java.security.AccessController.getContext;
 
 /**
  * Created by Nemanja on 22. 05. 2017.

@@ -35,9 +35,6 @@
             android:name=".NFCScan"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Tabla1"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Status"
             android:screenOrientation="portrait" />
         <activity
@@ -49,7 +46,14 @@
         <activity
             android:name=".Tabla4"
             android:screenOrientation="portrait" />
-        <activity android:name=".Tabla3a"></activity>
+        <activity
+            android:name=".Tabla3a"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Tabla7" />
+        <activity android:name=".Tabla10" />
+        <activity android:name=".Tabla16" />
+        <activity android:name=".Tabla19" />
+        <activity android:name=".Tabla26"></activity>
     </application>
 
 </manifest>
