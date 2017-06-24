@@ -17,21 +17,19 @@ public class Tabla4 extends AppCompatActivity {
                     R.drawable.tabla4image4, R.drawable.tabla4image5,
                     R.drawable.tabla4image6, R.drawable.tabla4image7,
                     R.drawable.tabla4image8};
-    public int[] wrongAnswers = new int[3];
+    public static Integer[] tabla26Sounds = {};
     public Integer[] popupTexts =
-            {R.string.tabla4popup0, R.string.tabla4popup2, R.string.tabla4popup5};
+            {R.string.tabla4popup0, null, R.string.tabla4popup2, null, null, R.string.tabla4popup5, null, null, null};
+    public Boolean[] answers =
+            {false, true, false, true, true, false, true, true, true};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla4);
 
-        wrongAnswers[0] = 0;
-        wrongAnswers[1] = 2;
-        wrongAnswers[2] = 5;
-
         ExpandableHeightGridView tabla4GridView = (ExpandableHeightGridView) findViewById(R.id.tabla4Grid);
-        ImageAdapter tabla4ImageAdapter = new ImageAdapter(Tabla4.this, tabla4Images, tabla4CheckboxSelection, wrongAnswers, popupTexts);
+        ImageAdapter tabla4ImageAdapter = new ImageAdapter(Tabla4.this, tabla4Images, tabla26Sounds, tabla4CheckboxSelection, answers, popupTexts);
         tabla4GridView.setAdapter(tabla4ImageAdapter);
         tabla4GridView.setExpanded(true);
 
@@ -39,15 +37,13 @@ public class Tabla4 extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (tabla4CheckboxSelection[1] == true &&
-                        tabla4CheckboxSelection[3] == true &&
-                        tabla4CheckboxSelection[4] == true &&
-                        tabla4CheckboxSelection[6] == true &&
-                        tabla4CheckboxSelection[7] == true &&
-                        tabla4CheckboxSelection[8] == true &&
-                        tabla4CheckboxSelection[0] == false &&
-                        tabla4CheckboxSelection[2] == false &&
-                        tabla4CheckboxSelection[5] == false) {
+                boolean equal = true;
+                for (int i = 0; i < tabla4CheckboxSelection.length; i++) {
+                    if (tabla4CheckboxSelection[i] != answers[i]) {
+                        equal = false;
+                    }
+                }
+                if (equal == true) {
                     Intent intent = new Intent(getApplicationContext(), Cestitamo.class);
                     startActivity(intent);
                 } else {

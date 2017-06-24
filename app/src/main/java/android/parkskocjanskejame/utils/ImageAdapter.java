@@ -13,27 +13,27 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static android.parkskocjanskejame.Tabla3b.tabla3bSounds;
-
 public class ImageAdapter extends BaseAdapter {
     Context context;
     LayoutInflater inflater;
 
     public static int layout;
     public static Integer[] images;
+    public static Integer[] sounds;
     public static boolean[] checkboxSelection;
-    public static int[] wrongAnswers;
+    public static Boolean[] answers;
     public static Integer[] popupTexts;
 
     AlertDialog alert;
     MediaPlayer mediaPlayer;
 
-    public ImageAdapter(Context c, Integer[] images, boolean[] checkboxSelection, int[] wrongAnswers, Integer[] popupTexts) {
+    public ImageAdapter(Context c, Integer[] images, Integer[] sounds, boolean[] checkboxSelection, Boolean[] answers, Integer[] popupTexts) {
         this.context = c;
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.images = images;
+        this.sounds = sounds;
         this.checkboxSelection = checkboxSelection;
-        this.wrongAnswers = wrongAnswers;
+        this.answers = answers;
         this.popupTexts = popupTexts;
     }
 
@@ -95,23 +95,16 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     private void showPopup(int imageID) {
-        int x = wrongAnswers[0];
-        int y = wrongAnswers[1];
-        int z = wrongAnswers[2];
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
         View v = inflater.inflate(R.layout.tablapopup, null);
         alertDialog.setView(v);
         alert = alertDialog.create();
         TextView popupText = (TextView) v.findViewById(R.id.tablapopupText);
-        if (imageID == x) {
-            popupText.setText(popupTexts[0]);
-            alert.show();
-        } else if (imageID == y) {
-            popupText.setText(popupTexts[1]);
-            alert.show();
-        } else if (imageID == z) {
-            popupText.setText(popupTexts[2]);
-            alert.show();
+        if (popupTexts[imageID] != null) {
+            if (answers[imageID] == false) {
+                popupText.setText(popupTexts[imageID]);
+                alert.show();
+            }
         }
         Button popupButton = (Button) v.findViewById(R.id.tablapopupButton);
         popupButton.setOnClickListener(new View.OnClickListener() {
@@ -123,9 +116,19 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     private void createSound(int imageID) {
-        if (imageID == wrongAnswers[0] || imageID == wrongAnswers[1] || imageID == wrongAnswers[2]) {
-            mediaPlayer = MediaPlayer.create(context, R.raw.beep);
-            mediaPlayer.start();
+        if (sounds.length > 0) {
+            if (answers[imageID] == true) {
+                mediaPlayer = MediaPlayer.create(context, sounds[imageID]);
+                mediaPlayer.start();
+            } else {
+                mediaPlayer = MediaPlayer.create(context, R.raw.beep);
+                mediaPlayer.start();
+            }
+        } else {
+            if (answers[imageID] == false) {
+                mediaPlayer = MediaPlayer.create(context, R.raw.beep);
+                mediaPlayer.start();
+            }
         }
     }
 
