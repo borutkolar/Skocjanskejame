@@ -39,4 +39,11 @@
     <string name="tabla26popup1">Zlata ribica je invazivna vrsta in s prehranjevanjem v kalu škoduje drugim vrstam.</string>
     <string name="tabla26popup4">Želva rdečevratka je invazivna vrsta, saj z gnezdenjem izpodriva avtohtono vrsto želve, močvirsko sklednico.</string>
     <string name="tabla26popup5">Gradbeni material ne sodi v kal, saj uničuje habitat številnim živalskim in rastlinskim vrstam.</string>
+    <string name="napacno">Napačno</string>
+    <string name="pravilno">Pravilno</string>
+    <string name="drzivleci">Drži in povleci</string>
+    <string name="tabla7">Jame so pomembno življensko okolje za nekatere rastlinske in živalske vrste.</string>
+    <string name="tabla7razlaga">V podzemlju ni svetlobe, zato rastlinske vrste tam ne morejo uspevati.</string>
+    <string name="tabla10">Najhitrejši plenilec na svetu je gepard.</string>
+    <string name="tabla10razlaga">Najhitrejši plenilec je sokol selec (Falco peregrinus), ki v letu s hitrostjo do 320 km/h pleni druge ptice.</string>
 </resources>
