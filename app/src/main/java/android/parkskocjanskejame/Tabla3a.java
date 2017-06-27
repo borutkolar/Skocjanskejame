@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -57,10 +58,15 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
         View v = inf.inflate(R.layout.tabla3apopup, null);
         aD.setView(v);
         alert = aD.create();
+        alert.setCancelable(false);
         alert.show();
 
         TextView text = (TextView) v.findViewById(R.id.textView23);
         text.setText(R.string.tabla3arazlaga);
+        /*ImageView slika1 = (ImageView)findViewById(R.id.imageView);
+        slika1.setImageResource(R.drawable.kras1);
+        ImageView slika2 = (ImageView)findViewById(R.id.imageView2);
+        slika2.setImageResource(R.drawable.kras2);*/
 
 
         if (prav) {

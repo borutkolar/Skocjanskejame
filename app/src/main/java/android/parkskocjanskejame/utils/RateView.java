@@ -1,5 +1,6 @@
 package android.parkskocjanskejame.utils;
 
+import android.content.res.Resources;
 import android.graphics.Matrix;
 
 import android.content.Context;
@@ -55,6 +56,9 @@ public class RateView extends View{
     int arrowBitMapSize = 120;
     //Costum Listener
     private RateViewListener mListener;
+    String napacno = getContext().getString(R.string.napacno);
+    String pravilno = getContext().getString(R.string.pravilno);
+    String drzivleci = getContext().getString(R.string.drzivleci);
 
     public RateView(Context context) {
         super(context);
@@ -82,6 +86,8 @@ public class RateView extends View{
     }
 
     private void init(Context context, AttributeSet attr) {
+
+
 
         //Circle color
         circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.popupBackground));
@@ -152,7 +158,7 @@ public class RateView extends View{
                 //dislikePaint.setAlpha(alphaRange);
                 falsePaint.setAlpha(0);
                 //MainActivity.imageViewDenied.setAlpha(alphaRange/255.0f);
-                canvas.drawText("False", touchX,touchY-140, falsePaint);
+                canvas.drawText(napacno, touchX,touchY-140, falsePaint);
                 //canvas.drawText("Dislike", (float)(maxWidth*0.2), 150, dislikePaint);
             }
             //Right side of screen
@@ -169,7 +175,7 @@ public class RateView extends View{
                 truePaint.setAlpha(0);
                 //MainActivity.imageViewApproved.setAlpha(alphaRange/255.0f);
 
-                canvas.drawText("True", touchX,touchY-140, truePaint);
+                canvas.drawText(pravilno, touchX,touchY-140, truePaint);
                 //canvas.drawText("Like", (float)(maxWidth*0.8), 150 , likePaint);
             }
             //Middle part of the screen
@@ -197,8 +203,9 @@ public class RateView extends View{
                 truePaint.setAlpha(alphaRange);
                 rightArrowPaint.setAlpha(alphaRange);
 
-                canvas.drawText("False", touchX-200,touchY-90, falsePaint);
-                canvas.drawText("True", touchX+160,touchY-90, truePaint);
+
+                canvas.drawText(napacno, touchX-340,touchY+20, falsePaint);
+                canvas.drawText(pravilno, touchX+330,touchY+20, truePaint);
             }
 
             //Paint circle and remove "Hold&Drag" text
@@ -209,7 +216,6 @@ public class RateView extends View{
             //Paint right arrow
             canvas.drawBitmap(RotateBitmap(arrows, 180), touchX+radius, touchY-(arrowBitMapSize/2), rightArrowPaint);
         }else{
-
             //Reset colors
             resetColors();
             confidencePaint.setAlpha(255);
@@ -218,9 +224,9 @@ public class RateView extends View{
             //Paint the circle
             canvas.drawCircle((canvas.getWidth()/2),(int)circleStartPosition, radius, circlePaint);
             //canvas.drawText("Confidence", (canvas.getWidth()/2),(int)circleStartPosition-210, confidencePaint);
-            canvas.drawText("Hold & Drag", (canvas.getWidth()/2),(int)circleStartPosition+170, holdNDragPaint);
-            canvas.drawText("False", (canvas.getWidth()/2)-310,(int)circleStartPosition+20, falsePaint);
-            canvas.drawText("True", (canvas.getWidth()/2)+270,(int)circleStartPosition+20, truePaint);
+            canvas.drawText(drzivleci, (canvas.getWidth()/2),(int)circleStartPosition+170, holdNDragPaint);
+            canvas.drawText(napacno, (canvas.getWidth()/2)-340,(int)circleStartPosition+20, falsePaint);
+            canvas.drawText(pravilno, (canvas.getWidth()/2)+330,(int)circleStartPosition+20, truePaint);
 
             //Paint up arrow
             //canvas.drawBitmap(RotateBitmap(arrows, 90), (canvas.getWidth()/2)-(arrowBitMapSize/2), (int)circleStartPosition-(radius+arrowBitMapSize), null);

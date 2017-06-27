@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="android.parkskocjanskejame.Tabla7">
+    android:layout_margin="20dp"
+    tools:context="android.parkskocjanskejame.Tabla3a">
 
-</android.support.constraint.ConstraintLayout>
+    <android.parkskocjanskejame.utils.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tabla7"
+        android:textColor="@color/textColor"
+        android:layout_marginTop="10dp"
+        android:id="@+id/textVewTabla7"
+        android:adjustViewBounds="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"/>
+
+    <android.parkskocjanskejame.utils.RateView
+        android:id="@+id/rateView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"></android.parkskocjanskejame.utils.RateView>
+
+</RelativeLayout>
