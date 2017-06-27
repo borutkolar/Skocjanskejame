@@ -8,6 +8,7 @@ import android.parkskocjanskejame.utils.ImageAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Tabla3b extends AppCompatActivity {
@@ -30,6 +31,7 @@ public class Tabla3b extends AppCompatActivity {
     public Boolean[] answers =
             {true, true, false, true, false, true, true, false, true, false};
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,11 @@ public class Tabla3b extends AppCompatActivity {
         ImageAdapter tabla3bImageAdapter = new ImageAdapter(Tabla3b.this, tabla3bImages, tabla3bSounds, tabla3bCheckboxSelection, answers, popupTexts);
         tabla3bGridView.setAdapter(tabla3bImageAdapter);
         tabla3bGridView.setExpanded(true);
+
+        int defaultImageCounter = 0;
+        TextView tabla3bText2 = (TextView) findViewById(R.id.tabla3bText2);
+        int imageCounter = getIntent().getIntExtra("imageCounter", defaultImageCounter);
+        tabla3bText2.setText(Integer.toString(imageCounter));
 
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {

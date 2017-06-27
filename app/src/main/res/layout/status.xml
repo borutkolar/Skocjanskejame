@@ -17,18 +17,28 @@
         android:textSize="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp" />
+        android:layout_marginTop="20dp" />
+
+    <GridView
+        android:id="@+id/statusGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:numColumns="4"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:layout_above="@+id/statusText2"
+        android:layout_alignParentStart="true" />
 
     <android.parkskocjanskejame.utils.CustomTextView
         android:id="@+id/statusText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginStart="68dp"
         android:text="0"
         android:textColor="@color/textColor"
-        android:textSize="50dp"
-        android:layout_below="@+id/statusText1"
+        android:textSize="40dp"
+        android:layout_marginBottom="21dp"
+        android:layout_above="@+id/statusText4"
         android:layout_alignStart="@+id/statusText1" />
 
     <android.parkskocjanskejame.utils.CustomTextView
@@ -37,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="/8"
         android:textColor="@color/textColor"
-        android:textSize="50dp"
+        android:textSize="40dp"
         android:layout_alignBaseline="@+id/statusText2"
         android:layout_alignBottom="@+id/statusText2"
         android:layout_toEndOf="@+id/statusText2" />
@@ -49,8 +59,9 @@
         android:gravity="center"
         android:text="@string/status2"
         android:textColor="@color/textColor"
-        android:textSize="35dp"
-        android:layout_marginBottom="32dp"
+        android:textSize="30dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="14dp" />
+
 </RelativeLayout>

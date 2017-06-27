@@ -7,8 +7,8 @@
     <color name="textColor">#000000</color>
     <color name="buttonColor">#79a52c</color>
     <color name="buttonTextColor">#FFFFFF</color>
-    <color name="popupBackground">#172083</color>
+    <color name="popupBackground">#f9eecc</color>
     <color name="falseColor">#000000</color>
     <color name="trueColor">#72EF52</color>
-    <color name="popupTextColor">#ffffff</color>
+    <color name="popupTextColor">#000000</color>
 </resources>

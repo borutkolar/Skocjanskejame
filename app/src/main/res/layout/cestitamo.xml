@@ -8,16 +8,36 @@
     tools:context="android.parkskocjanskejame.Cestitamo">
 
     <android.parkskocjanskejame.utils.CustomTextView
-        android:id="@+id/cestitamoText"
+        android:id="@+id/cestitamoText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/textColor"
         android:textSize="35dp"
-        android:text="Text"
+        android:text="@string/cestitamo1a"
         android:gravity="center"
         android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/cestitamoImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/znacka1"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/cestitamoText1"
+        android:layout_centerHorizontal="true" />
+
+    <android.parkskocjanskejame.utils.CustomTextView
+        android:id="@+id/cestitamoText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:textSize="30dp"
+        android:text="@string/cestitamo1b"
+        android:gravity="center"
+        android:layout_below="@+id/cestitamoImage"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="41dp" />
+        android:layout_marginTop="17dp" />
 
     <android.parkskocjanskejame.utils.CustomButton
         android:id="@+id/cestitamoButton"
@@ -27,7 +47,8 @@
         android:text="@string/naprej"
         android:textSize="20dp"
         android:textColor="@color/buttonTextColor"
+        android:layout_marginBottom="17dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="44dp" />
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
