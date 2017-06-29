@@ -42,10 +42,9 @@ public class Tabla3b extends AppCompatActivity {
         tabla3bGridView.setAdapter(tabla3bImageAdapter);
         tabla3bGridView.setExpanded(true);
 
-        int defaultImageCounter = 0;
         TextView tabla3bText2 = (TextView) findViewById(R.id.tabla3bText2);
-        int imageCounter = getIntent().getIntExtra("imageCounter", defaultImageCounter);
-        tabla3bText2.setText(Integer.toString(imageCounter));
+        int value = getIntent().getIntExtra("imageCounter", ImageAdapter.imageCounter);
+        tabla3bText2.setText(Integer.toString(value));
 
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {

@@ -4,32 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:layout_margin="10dp"
     tools:context="android.parkskocjanskejame.NFCScan">
 
     <android.parkskocjanskejame.utils.CustomTextView
         android:id="@+id/nfcscanText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
         android:text="@string/nfcScan"
         android:textColor="@color/textColor"
-        android:textSize="60dp"
-        android:gravity="center"/>
-
-    <android.parkskocjanskejame.utils.CustomButton
-        android:id="@+id/nfcscanButton"
-        android:layout_width="250dp"
-        android:layout_height="160dp"
-        android:text="@string/skeniraj"
-        android:textSize="40dp"
-        android:textColor="@color/buttonTextColor"
-        android:background="@drawable/custombutton"
+        android:textSize="45dp"
         android:gravity="center"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:id="@+id/nfcscanImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/nfcboard1"
         android:layout_below="@+id/nfcscanText"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp" />
+
+    <ImageView
+        android:id="@+id/leftarrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        app:srcCompat="@drawable/leftarrow" />
+
+    <ImageView
+        android:id="@+id/help"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@drawable/help" />
 
 </RelativeLayout>

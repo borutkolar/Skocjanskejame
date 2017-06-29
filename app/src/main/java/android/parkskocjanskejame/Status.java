@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.media.Image;
 import android.os.Handler;
 import android.parkskocjanskejame.utils.Constants;
+import android.parkskocjanskejame.utils.Functions;
 import android.parkskocjanskejame.utils.GPSTracker;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
@@ -78,6 +79,23 @@ public class Status extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), NFCScan.class);
                 startActivity(intent);
+            }
+        });
+
+        ImageView leftArrow = (ImageView) findViewById(R.id.leftarrow);
+        leftArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Cestitamo.class);
+                startActivity(i);
+            }
+        });
+
+        ImageView help = (ImageView) findViewById(R.id.help);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.helpPopup(Status.this);
             }
         });
 

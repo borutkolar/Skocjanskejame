@@ -6,12 +6,16 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.parkskocjanskejame.utils.Constants;
+import android.parkskocjanskejame.utils.Functions;
 import android.parkskocjanskejame.utils.GPSTracker;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.test.mock.MockPackageManager;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class NFCScan extends AppCompatActivity {
@@ -24,13 +28,12 @@ public class NFCScan extends AppCompatActivity {
 
     NfcAdapter nfcAdapter;
 
+    int[] images = {R.drawable.nfcboard1, R.drawable.nfcboard2};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nfcscan);
-
-        Button nfcscanButton = (Button) findViewById(R.id.nfcscanButton);
-        nfcscanButton.setAlpha(0.2f);
 
         /*Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         vibrator.vibrate(vibrations, -1);*/
@@ -59,6 +62,44 @@ public class NFCScan extends AppCompatActivity {
         if (nfcAdapter == null || !nfcAdapter.isEnabled()) {
             Toast.makeText(this, R.string.NFC, Toast.LENGTH_LONG).show();
         }
+
+        final ImageView board = (ImageView) findViewById(R.id.nfcscanImage);
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            int i = 0;
+            @Override
+            public void run() {
+                board.setImageResource(images[i]);
+                i++;
+                if (i > (images.length - 1)) {
+                    i = 0;
+                }
+                handler.postDelayed(this, 2000);
+            }
+        };
+        handler.postDelayed(runnable, 2000);
+
+        ImageView leftArrow = (ImageView) findViewById(R.id.leftarrow);
+        leftArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Constants.status == 0) {
+                    Intent i1 = new Intent(getApplicationContext(), LocationSearch.class);
+                    startActivity(i1);
+                } else {
+                    Intent i1 = new Intent(getApplicationContext(), Status.class);
+                    startActivity(i1);
+                }
+            }
+        });
+
+        ImageView help = (ImageView) findViewById(R.id.help);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.helpPopup(NFCScan.this);
+            }
+        });
     }
 
     @Override

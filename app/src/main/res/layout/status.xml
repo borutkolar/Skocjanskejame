@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
+    android:layout_margin="10dp"
     tools:context="android.parkskocjanskejame.Status">
 
     <android.parkskocjanskejame.utils.CustomTextView
@@ -17,7 +17,7 @@
         android:textSize="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="14dp" />
 
     <GridView
         android:id="@+id/statusGrid"
@@ -26,19 +26,19 @@
         android:numColumns="4"
         android:verticalSpacing="10dp"
         android:horizontalSpacing="10dp"
-        android:layout_above="@+id/statusText2"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/statusText1"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp" />
 
     <android.parkskocjanskejame.utils.CustomTextView
         android:id="@+id/statusText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_marginStart="62dp"
         android:text="0"
         android:textColor="@color/textColor"
         android:textSize="40dp"
-        android:layout_marginBottom="21dp"
-        android:layout_above="@+id/statusText4"
+        android:layout_below="@+id/statusGrid"
         android:layout_alignStart="@+id/statusText1" />
 
     <android.parkskocjanskejame.utils.CustomTextView
@@ -60,8 +60,24 @@
         android:text="@string/status2"
         android:textColor="@color/textColor"
         android:textSize="30dp"
+        android:layout_below="@+id/statusText2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="23dp" />
+
+    <ImageView
+        android:id="@+id/leftarrow"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="14dp" />
+        app:srcCompat="@drawable/leftarrow" />
+
+    <ImageView
+        android:id="@+id/help"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:srcCompat="@drawable/help" />
 
 </RelativeLayout>

@@ -4,8 +4,7 @@
     <string name="zacni">Začni</string>
     <string name="iskanjeLokacije">Iskanje lokacije</string>
     <string name="locationSearch">V bližini značke vas bo telefon na to opozoril</string>
-    <string name="nfcScan">Poišči značko in</string>
-    <string name="skeniraj">skeniraj</string>
+    <string name="nfcScan">Poišči značko in nanjo prisloni telefon</string>
     <string name="cestitamo1a">ČESTITAMO! Pobrali ste prvo značko</string>
     <string name="cestitamo3a">ČESTITAMO! Pobrali ste drugo značko</string>
     <string name="cestitamo4a">ČESTITAMO! Pobrali ste tretjo značko</string>
@@ -54,4 +53,10 @@
     <string name="tabla7razlaga">V podzemlju ni svetlobe, zato rastlinske vrste tam ne morejo uspevati.</string>
     <string name="tabla10">Najhitrejši plenilec na svetu je gepard.</string>
     <string name="tabla10razlaga">Najhitrejši plenilec je sokol selec (Falco peregrinus), ki v letu s hitrostjo do 320 km/h pleni druge ptice.</string>
+    <string name="navodila1">NAVODILA ZA UPORABO</string>
+    <string name="navodila2">Za uporabo aplikacije bo potrebna podatkovna povezava. Aplikacijo pusti odprto vso pot, telefon pa pospravi v žep in uživaj v naravi.
+                                Ko prideš v bližino table z interaktivnimi vsebinami, te bo telefon trikrat z vibracijo opozoril, da te pri tej tabli čaka naloga.
+                                Poišči NFC značko in jo z uporabo telefona skeniraj. Pri izbranih tablah, kjer je značka, te čaka vprašanje (ki je vezano na tablo) in nagrada.
+                                Na vprašanja odgovoriš tako, da s prstom povlečeš na odgovor DA ali NE, ali pa da izbereš slike, ki so pravilen odgovor na vprašanje. Tudi če na
+                                vprašanje odgovoriš napačno, imaš ponovno možnost za pravilen odgovor in nagrado – tako da ne obupaj in nadaljuj do konca učne poti.</string>
 </resources>

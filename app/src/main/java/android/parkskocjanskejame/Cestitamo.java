@@ -2,6 +2,7 @@ package android.parkskocjanskejame;
 
 import android.content.Intent;
 import android.parkskocjanskejame.utils.Constants;
+import android.parkskocjanskejame.utils.Functions;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -81,6 +82,14 @@ public class Cestitamo extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Status.class);
                 startActivity(intent);
+            }
+        });
+
+        ImageView help = (ImageView) findViewById(R.id.help);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.helpPopup(Cestitamo.this);
             }
         });
     }
