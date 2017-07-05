@@ -90,7 +90,7 @@ public class RateView extends View{
 
 
         //Circle color
-        circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.popupBackground));
+        circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.circleColor));
 
         //Hold&Drag text color
         holdNDragPaint.setColor(ContextCompat.getColor(getContext(), R.color.textColor));
@@ -119,7 +119,6 @@ public class RateView extends View{
         falsePaint.setTextAlign(Paint.Align.CENTER);
 
         //Arrow color
-        upArrowPaint.setAlpha(80);
         leftArrowPaint.setAlpha(80);
         rightArrowPaint.setAlpha(80);
 
@@ -147,8 +146,13 @@ public class RateView extends View{
 
             //Left side of screen
             if(inFalseArea){
-                falsePaint.setTextSize(120);
-                falsePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseColor));
+                falsePaint.setTextSize(70);
+                circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
+                truePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
+                falsePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
+                rightArrowPaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
+                leftArrowPaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
+
 
                 //output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
                 int alphaRange = (int)(0 + ((255 - 0) / ((maxWidth*0.18) - (maxWidth*0.3)) * (touchX - (maxWidth*0.3))));
@@ -156,15 +160,22 @@ public class RateView extends View{
                     alphaRange = 255;
                 }
                 //dislikePaint.setAlpha(alphaRange);
-                falsePaint.setAlpha(0);
+                falsePaint.setAlpha(255);
+                leftArrowPaint.setAlpha(255);
+                rightArrowPaint.setAlpha(255);
                 //MainActivity.imageViewDenied.setAlpha(alphaRange/255.0f);
                 canvas.drawText(napacno, touchX,touchY-140, falsePaint);
                 //canvas.drawText("Dislike", (float)(maxWidth*0.2), 150, dislikePaint);
             }
             //Right side of screen
             else if(inTrueArea){
-                truePaint.setTextSize(120);
-                truePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueColor));
+                truePaint.setTextSize(70);
+                truePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
+                circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
+                falsePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
+                rightArrowPaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
+                leftArrowPaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
+
 
                 //output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
                 int alphaRange = (int)(0 + ((255 - 0) / ((maxWidth*0.85) - (maxWidth*0.7)) * (touchX - (maxWidth*0.7))));
@@ -172,7 +183,9 @@ public class RateView extends View{
                     alphaRange = 255;
                 }
                 //likePaint.setAlpha(alphaRange);
-                truePaint.setAlpha(0);
+                truePaint.setAlpha(255);
+                leftArrowPaint.setAlpha(255);
+                rightArrowPaint.setAlpha(255);
                 //MainActivity.imageViewApproved.setAlpha(alphaRange/255.0f);
 
                 canvas.drawText(pravilno, touchX,touchY-140, truePaint);
@@ -180,7 +193,7 @@ public class RateView extends View{
             }
             //Middle part of the screen
             else{
-
+                circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.circleColor));
                 resetColors();
 
                 //output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
