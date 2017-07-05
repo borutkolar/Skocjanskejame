@@ -8,8 +8,7 @@
     <color name="buttonColor">#79a52c</color>
     <color name="buttonTextColor">#FFFFFF</color>
     <color name="popupBackground">#172083</color>
-    <color name="falseAreaColor">#fa0101</color>
-    <color name="trueAreaColor">#3cef0e</color>
+    <color name="falseColor">#000000</color>
+    <color name="trueColor">#72EF52</color>
     <color name="popupTextColor">#ffffff</color>
-    <color name="circleColor">#101010</color>
 </resources>

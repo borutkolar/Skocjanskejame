@@ -1,9 +1,13 @@
 package android.parkskocjanskejame.utils;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.parkskocjanskejame.R;
+import android.parkskocjanskejame.Tabla3b;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +27,7 @@ public class ImageAdapter extends BaseAdapter {
     public static boolean[] checkboxSelection;
     public static Boolean[] answers;
     public static Integer[] popupTexts;
+    public static int imageCounter;
 
     AlertDialog alert;
     MediaPlayer mediaPlayer;
@@ -35,6 +40,7 @@ public class ImageAdapter extends BaseAdapter {
         this.checkboxSelection = checkboxSelection;
         this.answers = answers;
         this.popupTexts = popupTexts;
+        imageCounter = 0;
     }
 
     public int getCount() {
@@ -74,13 +80,21 @@ public class ImageAdapter extends BaseAdapter {
                 stopPlaying();
                 int idImage = viewHolder.imageView.getId();
                 int idCheckbox = viewHolder.checkBox.getId();
-                if (checkboxSelection[idCheckbox] == true) {
-                    viewHolder.checkBox.setChecked(false);
-                    checkboxSelection[idCheckbox] = false;
+                if (answers[idImage] == true) {
+                    imageCounter++;
+                    Intent intent = new Intent(context, Tabla3b.class);
+                    intent.putExtra("imageCounter", imageCounter);
+                    if (checkboxSelection[idCheckbox] == true) {
+                        viewHolder.checkBox.setChecked(false);
+                        checkboxSelection[idCheckbox] = false;
+                    } else {
+                        createSound(idImage);
+                        viewHolder.checkBox.setChecked(true);
+                        checkboxSelection[idCheckbox] = true;
+                        showPopup(idImage);
+                    }
                 } else {
                     createSound(idImage);
-                    viewHolder.checkBox.setChecked(true);
-                    checkboxSelection[idCheckbox] = true;
                     showPopup(idImage);
                 }
             }

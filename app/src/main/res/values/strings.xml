@@ -1,26 +1,33 @@
 <resources>
     <string name="app_name">Park Skocjanske jame</string>
-    <string name="homeScreen">Po poti najdi in skeniraj značke!</string>
+    <string name="homeScreen">Po poti najdi in poberi značke</string>
     <string name="zacni">Začni</string>
     <string name="iskanjeLokacije">Iskanje lokacije</string>
-    <string name="locationSearch">V bližini značke vas bo telefon na to opozoril.</string>
-    <string name="nfcScan">Poišči značko in</string>
-    <string name="skeniraj">skeniraj</string>
-    <string name="cestitamo1">ČESTITAMO! Pobrali ste prvo značko. DOBILI STE NAZIV: Začetnik raziskovalec/raziskovalka učne poti.</string>
-    <string name="cestitamo3">ČESTITAMO! Pobrali ste drugo značko. DOBILI STE NAZIV: Gozdovnik/gozdovnica učne poti.</string>
-    <string name="cestitamo4">ČESTITAMO! Pobrali ste tretjo značko. DOBILI STE NAZIV: Opazovalec/opazovalka živali.</string>
-    <string name="cestitamo7">ČESTITAMO! Pobrali ste četrto značko. DOBILI STE NAZIV: Raziskovalec/raziskovalka podzemnega sveta.</string>
-    <string name="cestitamo10">ČESTITAMO! Pobrali ste peto značko. DOBILI STE NAZIV: Najhitrejši/najhitrejša raziskovalec/raziskovalka.</string>
-    <string name="cestitamo16">ČESTITAMO! Pobrali ste šesto značko. DOBILI STE NAZIV: Raziskovalec/raziskovalka vetra.</string>
-    <string name="cestitamo19">ČESTITAMO! Pobrali ste sedmo značko. DOBILI STE NAZIV: Jamar/jamarka..</string>
-    <string name="cestitamo26">ČESTITAMO! Pobrali ste osmo značko. DOBILI STE NAZIV: Popotnik/popotnica učne poti.</string>
+    <string name="locationSearch">V bližini značke vas bo telefon na to opozoril</string>
+    <string name="nfcScan">Poišči značko in nanjo prisloni telefon</string>
+    <string name="cestitamo1a">ČESTITAMO! Pobrali ste prvo značko</string>
+    <string name="cestitamo3a">ČESTITAMO! Pobrali ste drugo značko</string>
+    <string name="cestitamo4a">ČESTITAMO! Pobrali ste tretjo značko</string>
+    <string name="cestitamo7a">ČESTITAMO! Pobrali ste četrto značko</string>
+    <string name="cestitamo10a">ČESTITAMO! Pobrali ste peto značko</string>
+    <string name="cestitamo16a">ČESTITAMO! Pobrali ste šesto značko</string>
+    <string name="cestitamo19a">ČESTITAMO! Pobrali ste sedmo značko</string>
+    <string name="cestitamo26a">ČESTITAMO! Pobrali ste osmo značko</string>
+    <string name="cestitamo1b">Začetnik raziskovalec/raziskovalka učne poti</string>
+    <string name="cestitamo3b">Gozdovnik/gozdovnica učne poti</string>
+    <string name="cestitamo4b">Opazovalec/opazovalka živali</string>
+    <string name="cestitamo7b">Raziskovalec/raziskovalka podzemnega sveta</string>
+    <string name="cestitamo10b">Najhitrejši/najhitrejša raziskovalec/raziskovalka</string>
+    <string name="cestitamo16b">Raziskovalec/raziskovalka vetra</string>
+    <string name="cestitamo19b">Jamar/jamarka</string>
+    <string name="cestitamo26b">Popotnik/popotnica učne poti</string>
     <string name="naprej">Naprej</string>
     <string name="NFC">NFC ni vklopljen!</string>
     <string name="status">STATUS</string>
-    <string name="status2">Pospravite telefon. V bližini naslednje značke vas bo telefon opozoril.</string>
-    <string name="tabla3b">Odkljukaj slike ptic, ki živijo na prepadnih stenah.</string>
+    <string name="status2">Pospravite telefon. V bližini naslednje značke vas bo telefon opozoril</string>
+    <string name="tabla3b">Odkljukaj slike ptic, ki živijo na prepadnih stenah</string>
     <string name="odgovori">Odgovori</string>
-    <string name="tabla4">Odkljukaj živali, ki uporabljajo dupla kot njihova prebivališča ali prehanjevališlča.</string>
+    <string name="tabla4">Odkljukaj živali, ki uporabljajo dupla kot njihova prebivališča ali prehanjevališlča</string>
     <string name="tabla3bpopup2">Kukavica (Cuculus canorus) živi v iglastih in listnatih gozdov, v kulturni krajini z redko posejanim drevjem in mejicami ter mokrišč.</string>
     <string name="tabla3bpopup4">Taščica (Erithacus rubecula) si gnezdo splete med gostimi koreninami v gozdu.</string>
     <string name="tabla3bpopup7">Bela štorklja (Ciconia ciconia) gnezdi v odprti kulturni krajini z dostopom do rek, močvirij in poplavnih ravnic.</string>
@@ -46,4 +53,10 @@
     <string name="tabla7razlaga">V podzemlju ni svetlobe, zato rastlinske vrste tam ne morejo uspevati.</string>
     <string name="tabla10">Najhitrejši plenilec na svetu je gepard.</string>
     <string name="tabla10razlaga">Najhitrejši plenilec je sokol selec (Falco peregrinus), ki v letu s hitrostjo do 320 km/h pleni druge ptice.</string>
+    <string name="navodila1">NAVODILA ZA UPORABO</string>
+    <string name="navodila2">Za uporabo aplikacije bo potrebna podatkovna povezava. Aplikacijo pusti odprto vso pot, telefon pa pospravi v žep in uživaj v naravi.
+                                Ko prideš v bližino table z interaktivnimi vsebinami, te bo telefon trikrat z vibracijo opozoril, da te pri tej tabli čaka naloga.
+                                Poišči NFC značko in jo z uporabo telefona skeniraj. Pri izbranih tablah, kjer je značka, te čaka vprašanje (ki je vezano na tablo) in nagrada.
+                                Na vprašanja odgovoriš tako, da s prstom povlečeš na odgovor DA ali NE, ali pa da izbereš slike, ki so pravilen odgovor na vprašanje. Tudi če na
+                                vprašanje odgovoriš napačno, imaš ponovno možnost za pravilen odgovor in nagrado – tako da ne obupaj in nadaljuj do konca učne poti.</string>
 </resources>
