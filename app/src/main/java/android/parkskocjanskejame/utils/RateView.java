@@ -1,6 +1,9 @@
 package android.parkskocjanskejame.utils;
 
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
 import android.graphics.Matrix;
 
 import android.content.Context;
@@ -16,6 +19,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 
 /**
  * Created by Nemanja on 22. 05. 2017.
@@ -150,9 +154,6 @@ public class RateView extends View{
                 circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
                 truePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
                 falsePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
-                rightArrowPaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
-                leftArrowPaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
-
 
                 //output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
                 int alphaRange = (int)(0 + ((255 - 0) / ((maxWidth*0.18) - (maxWidth*0.3)) * (touchX - (maxWidth*0.3))));
@@ -160,9 +161,7 @@ public class RateView extends View{
                     alphaRange = 255;
                 }
                 //dislikePaint.setAlpha(alphaRange);
-                falsePaint.setAlpha(255);
-                leftArrowPaint.setAlpha(255);
-                rightArrowPaint.setAlpha(255);
+                falsePaint.setAlpha(alphaRange);
                 //MainActivity.imageViewDenied.setAlpha(alphaRange/255.0f);
                 canvas.drawText(napacno, touchX,touchY-140, falsePaint);
                 //canvas.drawText("Dislike", (float)(maxWidth*0.2), 150, dislikePaint);
@@ -173,8 +172,6 @@ public class RateView extends View{
                 truePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
                 circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
                 falsePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
-                rightArrowPaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
-                leftArrowPaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
 
 
                 //output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
@@ -183,9 +180,7 @@ public class RateView extends View{
                     alphaRange = 255;
                 }
                 //likePaint.setAlpha(alphaRange);
-                truePaint.setAlpha(255);
-                leftArrowPaint.setAlpha(255);
-                rightArrowPaint.setAlpha(255);
+                truePaint.setAlpha(alphaRange);
                 //MainActivity.imageViewApproved.setAlpha(alphaRange/255.0f);
 
                 canvas.drawText(pravilno, touchX,touchY-140, truePaint);
@@ -193,7 +188,7 @@ public class RateView extends View{
             }
             //Middle part of the screen
             else{
-                circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.circleColor));
+
                 resetColors();
 
                 //output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
@@ -318,6 +313,7 @@ public class RateView extends View{
         return true;
     }
     public void resetColors(){
+        circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.circleColor));
         confidencePaint.setTextSize(70);
         falsePaint.setTextSize(70);
         truePaint.setTextSize(70);
@@ -355,7 +351,6 @@ public class RateView extends View{
         paint.setAlpha(alpha);
         return paint;
     }
-
 
 }
 
