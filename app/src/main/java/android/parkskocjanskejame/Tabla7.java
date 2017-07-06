@@ -2,7 +2,7 @@ package android.parkskocjanskejame;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.parkskocjanskejame.utils.Constants;
+import android.os.Handler;
 import android.parkskocjanskejame.utils.RateView;
 import android.parkskocjanskejame.utils.RateViewListener;
 import android.support.v7.app.AlertDialog;
@@ -30,15 +30,13 @@ public class Tabla7 extends AppCompatActivity implements RateViewListener {
     Typeface font;
     ScrollView sv;
     String odgovor;
+    int images7[] = {R.drawable.tabla7slika1, R.drawable.tabla7slika2};
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla7);
-
-        Constants.status = 4;
-        Constants.counter = 7;
 
        /* //Setup the number font
         font = Typeface.createFromAsset(getAssets(), "dinFont.ttf");
@@ -67,10 +65,22 @@ public class Tabla7 extends AppCompatActivity implements RateViewListener {
 
         TextView text = (TextView) v.findViewById(R.id.textView23);
         text.setText(R.string.tabla7razlaga);
-        ImageView slika1 = (ImageView) v.findViewById(R.id.imageView);
-        slika1.setImageResource(R.drawable.tabla7slika1);
-        ImageView slika2 = (ImageView) v.findViewById(R.id.imageView2);
-        slika2.setImageResource(R.drawable.tabla7slika2);
+        final ImageView tabla = (ImageView) v.findViewById(R.id.imageTabla3a);
+        tabla.setImageResource(R.drawable.tabla7slika1);
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            int i = 1;
+            @Override
+            public void run() {
+                tabla.setImageResource(images7[i]);
+                i--;
+                if (i < 0) {
+                    i = 1;
+                }
+                handler.postDelayed(this, 2000);
+            }
+        };
+        handler.postDelayed(runnable, 2000);
 
 
         if (prav) {

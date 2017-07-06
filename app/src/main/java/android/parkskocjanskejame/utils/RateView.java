@@ -1,6 +1,9 @@
 package android.parkskocjanskejame.utils;
 
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
 import android.graphics.Matrix;
 
 import android.content.Context;
@@ -16,6 +19,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 
 /**
  * Created by Nemanja on 22. 05. 2017.
@@ -90,7 +94,7 @@ public class RateView extends View{
 
 
         //Circle color
-        circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.buttonColor));
+        circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.circleColor));
 
         //Hold&Drag text color
         holdNDragPaint.setColor(ContextCompat.getColor(getContext(), R.color.textColor));
@@ -119,7 +123,6 @@ public class RateView extends View{
         falsePaint.setTextAlign(Paint.Align.CENTER);
 
         //Arrow color
-        upArrowPaint.setAlpha(80);
         leftArrowPaint.setAlpha(80);
         rightArrowPaint.setAlpha(80);
 
@@ -147,8 +150,10 @@ public class RateView extends View{
 
             //Left side of screen
             if(inFalseArea){
-                falsePaint.setTextSize(120);
-                falsePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseColor));
+                falsePaint.setTextSize(70);
+                circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
+                truePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
+                falsePaint.setColor(ContextCompat.getColor(getContext(), R.color.falseAreaColor));
 
                 //output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
                 int alphaRange = (int)(0 + ((255 - 0) / ((maxWidth*0.18) - (maxWidth*0.3)) * (touchX - (maxWidth*0.3))));
@@ -156,15 +161,18 @@ public class RateView extends View{
                     alphaRange = 255;
                 }
                 //dislikePaint.setAlpha(alphaRange);
-                falsePaint.setAlpha(0);
+                falsePaint.setAlpha(alphaRange);
                 //MainActivity.imageViewDenied.setAlpha(alphaRange/255.0f);
                 canvas.drawText(napacno, touchX,touchY-140, falsePaint);
                 //canvas.drawText("Dislike", (float)(maxWidth*0.2), 150, dislikePaint);
             }
             //Right side of screen
             else if(inTrueArea){
-                truePaint.setTextSize(120);
-                truePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueColor));
+                truePaint.setTextSize(70);
+                truePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
+                circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
+                falsePaint.setColor(ContextCompat.getColor(getContext(), R.color.trueAreaColor));
+
 
                 //output = output_start + ((output_end - output_start) / (input_end - input_start)) * (input - input_start)
                 int alphaRange = (int)(0 + ((255 - 0) / ((maxWidth*0.85) - (maxWidth*0.7)) * (touchX - (maxWidth*0.7))));
@@ -172,7 +180,7 @@ public class RateView extends View{
                     alphaRange = 255;
                 }
                 //likePaint.setAlpha(alphaRange);
-                truePaint.setAlpha(0);
+                truePaint.setAlpha(alphaRange);
                 //MainActivity.imageViewApproved.setAlpha(alphaRange/255.0f);
 
                 canvas.drawText(pravilno, touchX,touchY-140, truePaint);
@@ -305,6 +313,7 @@ public class RateView extends View{
         return true;
     }
     public void resetColors(){
+        circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.circleColor));
         confidencePaint.setTextSize(70);
         falsePaint.setTextSize(70);
         truePaint.setTextSize(70);
@@ -342,7 +351,6 @@ public class RateView extends View{
         paint.setAlpha(alpha);
         return paint;
     }
-
 
 }
 

@@ -67,10 +67,10 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
 
         TextView text = (TextView) v.findViewById(R.id.textView23);
         text.setText(R.string.tabla10razlaga);
-        ImageView slika1 = (ImageView) v.findViewById(R.id.imageView);
+        /*ImageView slika1 = (ImageView) v.findViewById(R.id.imageView);
         slika1.setImageResource(R.drawable.tabla7slika1);
         ImageView slika2 = (ImageView) v.findViewById(R.id.imageView2);
-        slika2.setImageResource(R.drawable.tabla7slika2);
+        slika2.setImageResource(R.drawable.tabla7slika2);*/
 
 
         if (prav) {
