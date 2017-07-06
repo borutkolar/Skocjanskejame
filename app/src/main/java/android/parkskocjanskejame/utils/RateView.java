@@ -90,7 +90,7 @@ public class RateView extends View{
 
 
         //Circle color
-        circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.popupBackground));
+        circlePaint.setColor(ContextCompat.getColor(getContext(), R.color.buttonColor));
 
         //Hold&Drag text color
         holdNDragPaint.setColor(ContextCompat.getColor(getContext(), R.color.textColor));

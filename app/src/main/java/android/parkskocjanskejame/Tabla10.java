@@ -2,6 +2,7 @@ package android.parkskocjanskejame;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.RateView;
 import android.parkskocjanskejame.utils.RateViewListener;
 import android.support.v7.app.AlertDialog;
@@ -35,6 +36,9 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla10);
+
+        Constants.status = 5;
+        Constants.counter = 10;
 
        /* //Setup the number font
         font = Typeface.createFromAsset(getAssets(), "dinFont.ttf");

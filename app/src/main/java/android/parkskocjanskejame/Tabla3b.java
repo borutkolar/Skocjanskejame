@@ -3,6 +3,7 @@ package android.parkskocjanskejame;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.ExpandableHeightGridView;
 import android.parkskocjanskejame.utils.ImageAdapter;
 import android.support.v7.app.AppCompatActivity;
@@ -43,8 +44,6 @@ public class Tabla3b extends AppCompatActivity {
         tabla3bGridView.setExpanded(true);
 
         TextView tabla3bText2 = (TextView) findViewById(R.id.tabla3bText2);
-        int value = getIntent().getIntExtra("imageCounter", ImageAdapter.imageCounter);
-        tabla3bText2.setText(Integer.toString(value));
 
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {

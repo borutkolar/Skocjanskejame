@@ -1,18 +1,17 @@
 package android.parkskocjanskejame;
 
+
 import android.Manifest;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
-import android.os.Handler;
+import android.os.Bundle;
 import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.Functions;
 import android.parkskocjanskejame.utils.GPSTracker;
-import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.widget.SearchViewCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.test.mock.MockPackageManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +23,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static android.parkskocjanskejame.R.id.image;
+import static android.R.attr.resource;
+import static android.parkskocjanskejame.R.id.helpButton;
 import static android.parkskocjanskejame.R.id.statusText2;
 
 public class Status extends AppCompatActivity {
@@ -33,44 +33,37 @@ public class Status extends AppCompatActivity {
     private static final int REQUEST_CODE_PERMISSION = 2;
     String mPermission = Manifest.permission.ACCESS_FINE_LOCATION;
 
-    Integer[] images =
+    AlertDialog alert;
+
+    public Integer[] images =
             {R.drawable.znacka1, R.drawable.znacka2,
                     R.drawable.znacka3, R.drawable.znacka4,
                     R.drawable.znacka5, R.drawable.znacka6,
                     R.drawable.znacka7, R.drawable.znacka8};
-
-    AlertDialog alert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.status);
 
-        StatusImageAdapter statusImageAdapter = new StatusImageAdapter(this, images);
-        GridView statusGridView = (GridView) findViewById(R.id.statusGrid);
-        statusGridView.setAdapter(statusImageAdapter);
+        final Context context = getApplicationContext();
 
-        statusGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(Status.this);
-                LayoutInflater layoutInflater = (LayoutInflater) Status.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                View v = layoutInflater.inflate(R.layout.statuspopup, null);
-                alertDialog.setView(v);
-                alert = alertDialog.create();
-                ImageView imageView = (ImageView) v.findViewById(R.id.statuspopupImage);
-                imageView.setImageResource(images[position]);
-                alert.show();
+        ImageView znacka1 = (ImageView) findViewById(R.id.znacka1);
+        ImageView znacka2 = (ImageView) findViewById(R.id.znacka2);
+        ImageView znacka3 = (ImageView) findViewById(R.id.znacka3);
+        ImageView znacka4 = (ImageView) findViewById(R.id.znacka4);
+        ImageView znacka5 = (ImageView) findViewById(R.id.znacka5);
+        ImageView znacka6 = (ImageView) findViewById(R.id.znacka6);
+        ImageView znacka7 = (ImageView) findViewById(R.id.znacka7);
+        ImageView znacka8 = (ImageView) findViewById(R.id.znacka8);
 
-                ImageView popupImage = (ImageView) v.findViewById(R.id.statuspopupImage);
-                popupImage.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        alert.cancel();
-                    }
-                });
+        final ImageView[] imageViews = {znacka1, znacka2, znacka3, znacka4, znacka5, znacka6, znacka7, znacka8};
+
+        for (int i = 0; i < Constants.alpha.length; i++) {
+            if (Constants.alpha[i] == true) {
+                imageViews[i].setAlpha(1f);
             }
-        });
+        }
 
         TextView statusText2 = (TextView) findViewById(R.id.statusText2);
         statusText2.setText(Integer.toString(Constants.status));
@@ -120,39 +113,20 @@ public class Status extends AppCompatActivity {
         }
     }
 
-    public class StatusImageAdapter extends BaseAdapter {
-        private Context context;
-        public Integer[] images;
-
-        public StatusImageAdapter(Context context, Integer[] images) {
-            this.context = context;
-            this.images = images;
-        }
-
-        public int getCount() {
-            return images.length;
-        }
-
-        public Object getItem(int position) {
-            return null;
-        }
-
-        public long getItemId(int position) {
-            return 0;
-        }
-
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ImageView imageView;
-            if (convertView == null) {
-                imageView = new ImageView(context);
-                imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                imageView.setAdjustViewBounds(true);
-            } else {
-                imageView = (ImageView) convertView;
+    public void statusPopup(int resource) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Status.this);
+        LayoutInflater layoutInflater = (LayoutInflater) Status.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = layoutInflater.inflate(R.layout.statuspopup, null);
+        ImageView imageView = (ImageView) view.findViewById(R.id.statuspopupImage);
+        imageView.setImageResource(resource);
+        alertDialog.setView(view);
+        alert = alertDialog.create();
+        alert.show();
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alert.cancel();
             }
-
-            imageView.setImageResource(images[position]);
-            return imageView;
-        }
+        });
     }
 }

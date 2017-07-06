@@ -5,6 +5,7 @@
     android:layout_margin="20dp">
 
     <RelativeLayout
+        android:paddingBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -61,6 +62,9 @@
             android:layout_below="@id/tabla3bGrid"
             android:layout_centerHorizontal="true"
             android:layout_margin="15dp"
-            android:text="Odgovori" />
+            android:text="Odgovori"
+            android:background="@drawable/custombutton"
+            android:textColor="@color/buttonTextColor"
+            android:textSize="20dp" />
     </RelativeLayout>
 </ScrollView>

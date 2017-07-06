@@ -6,5 +6,6 @@ package android.parkskocjanskejame.utils;
 
 public class Constants {
     public static int status = 0;
-    public static int counter = 0;
+    public static int counter = 1;
+    public static boolean[] alpha = new boolean[8];
 }

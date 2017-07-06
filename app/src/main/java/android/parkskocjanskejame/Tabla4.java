@@ -2,6 +2,7 @@ package android.parkskocjanskejame;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.ExpandableHeightGridView;
 import android.parkskocjanskejame.utils.ImageAdapter;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +28,9 @@ public class Tabla4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla4);
+
+        Constants.status = 3;
+        Constants.counter = 4;
 
         ExpandableHeightGridView tabla4GridView = (ExpandableHeightGridView) findViewById(R.id.tabla4Grid);
         ImageAdapter tabla4ImageAdapter = new ImageAdapter(Tabla4.this, tabla4Images, tabla26Sounds, tabla4CheckboxSelection, answers, popupTexts);
