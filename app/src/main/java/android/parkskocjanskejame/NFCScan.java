@@ -65,13 +65,13 @@ public class NFCScan extends AppCompatActivity {
         final ImageView board = (ImageView) findViewById(R.id.nfcscanImage);
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
-            int i = 0;
+            int i = 1;
             @Override
             public void run() {
                 board.setImageResource(images[i]);
-                i++;
-                if (i > (images.length - 1)) {
-                    i = 0;
+                i--;
+                if (i < 0) {
+                    i = 1;
                 }
                 handler.postDelayed(this, 2000);
             }

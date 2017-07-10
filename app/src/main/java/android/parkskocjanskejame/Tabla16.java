@@ -11,7 +11,6 @@ public class Tabla16 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla16);
 
-        Constants.status = 6;
-        Constants.counter = 16;
+        Constants.status++;
     }
 }

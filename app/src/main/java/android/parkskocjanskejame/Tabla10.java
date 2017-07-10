@@ -37,8 +37,7 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla10);
 
-        Constants.status = 5;
-        Constants.counter = 10;
+        Constants.status++;
 
        /* //Setup the number font
         font = Typeface.createFromAsset(getAssets(), "dinFont.ttf");

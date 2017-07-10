@@ -23,6 +23,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static android.R.attr.id;
 import static android.R.attr.resource;
 import static android.parkskocjanskejame.R.id.helpButton;
 import static android.parkskocjanskejame.R.id.statusText2;
@@ -46,8 +47,6 @@ public class Status extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.status);
 
-        final Context context = getApplicationContext();
-
         ImageView znacka1 = (ImageView) findViewById(R.id.znacka1);
         ImageView znacka2 = (ImageView) findViewById(R.id.znacka2);
         ImageView znacka3 = (ImageView) findViewById(R.id.znacka3);
@@ -64,6 +63,15 @@ public class Status extends AppCompatActivity {
                 imageViews[i].setAlpha(1f);
             }
         }
+
+        statusPopup(znacka1, 0);
+        statusPopup(znacka2, 1);
+        statusPopup(znacka3, 2);
+        statusPopup(znacka4, 3);
+        statusPopup(znacka5, 4);
+        statusPopup(znacka6, 5);
+        statusPopup(znacka7, 6);
+        statusPopup(znacka8, 7);
 
         TextView statusText2 = (TextView) findViewById(R.id.statusText2);
         statusText2.setText(Integer.toString(Constants.status));
@@ -113,20 +121,27 @@ public class Status extends AppCompatActivity {
         }
     }
 
-    public void statusPopup(int resource) {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(Status.this);
-        LayoutInflater layoutInflater = (LayoutInflater) Status.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.statuspopup, null);
-        ImageView imageView = (ImageView) view.findViewById(R.id.statuspopupImage);
-        imageView.setImageResource(resource);
-        alertDialog.setView(view);
-        alert = alertDialog.create();
-        alert.show();
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                alert.cancel();
-            }
-        });
+    public void statusPopup(ImageView image, final int id) {
+        if (Constants.alpha[id] == true) {
+            image.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(Status.this);
+                    LayoutInflater layoutInflater = (LayoutInflater) Status.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    View view = layoutInflater.inflate(R.layout.statuspopup, null);
+                    ImageView imageView = (ImageView) view.findViewById(R.id.statuspopupImage);
+                    imageView.setImageResource(images[id]);
+                    alertDialog.setView(view);
+                    alert = alertDialog.create();
+                    alert.show();
+                    imageView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            alert.cancel();
+                        }
+                    });
+                }
+            });
+        }
     }
 }

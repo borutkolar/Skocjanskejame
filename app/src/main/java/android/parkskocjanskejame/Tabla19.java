@@ -11,7 +11,6 @@ public class Tabla19 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla19);
 
-        Constants.status = 7;
-        Constants.counter = 19;
+        Constants.status++;
     }
 }

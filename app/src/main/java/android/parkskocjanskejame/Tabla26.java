@@ -27,12 +27,11 @@ public class Tabla26 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla26);
 
-        Constants.status = 8;
-        Constants.counter = 26;
+        Constants.status++;
 
         ExpandableHeightGridView tabla26GridView = (ExpandableHeightGridView) findViewById(R.id.tabla26Grid);
-        ImageAdapter tabla26ImageAdapter = new ImageAdapter(Tabla26.this, tabla26Images, tabla26Sounds, tabla26CheckboxSelection, answers, popupTexts);
-        tabla26GridView.setAdapter(tabla26ImageAdapter);
+        //ImageAdapter tabla26ImageAdapter = new ImageAdapter(Tabla26.this, tabla26Images, tabla26Sounds, tabla26CheckboxSelection, answers, popupTexts);
+        //tabla26GridView.setAdapter(tabla26ImageAdapter);
         tabla26GridView.setExpanded(true);
 
         Button button = (Button) findViewById(R.id.button);

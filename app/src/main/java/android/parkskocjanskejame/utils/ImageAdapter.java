@@ -27,6 +27,7 @@ public class ImageAdapter extends BaseAdapter {
     public static boolean[] checkboxSelection;
     public static Boolean[] answers;
     public static Integer[] popupTexts;
+    public static int counter;
 
     AlertDialog alert;
     MediaPlayer mediaPlayer;
@@ -79,6 +80,10 @@ public class ImageAdapter extends BaseAdapter {
                 int idImage = viewHolder.imageView.getId();
                 int idCheckbox = viewHolder.checkBox.getId();
                 if (answers[idImage] == true) {
+                    counter++;
+                    Intent intent = new Intent(context, Tabla3b.class);
+                    intent.putExtra("counter", counter);
+                    context.startActivity(intent);
                     if (checkboxSelection[idCheckbox] == true) {
                         viewHolder.checkBox.setChecked(false);
                         checkboxSelection[idCheckbox] = false;
