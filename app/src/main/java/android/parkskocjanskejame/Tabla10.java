@@ -68,7 +68,6 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
         ImageView slika2 = (ImageView) v.findViewById(R.id.imageView2);
         slika2.setImageResource(R.drawable.tabla7slika2);*/
 
-
         if (prav) {
             //Retry button
             Button continueButton = (Button) v.findViewById(R.id.button2345);
