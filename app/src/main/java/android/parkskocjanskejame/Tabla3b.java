@@ -2,7 +2,9 @@ package android.parkskocjanskejame;
 
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.ExpandableHeightGridView;
 import android.parkskocjanskejame.utils.ImageAdapter;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static android.R.attr.defaultValue;
 
 public class Tabla3b extends AppCompatActivity {
     public static boolean[] tabla3bCheckboxSelection = new boolean[10];
@@ -31,6 +35,8 @@ public class Tabla3b extends AppCompatActivity {
     public Boolean[] answers =
             {true, true, false, true, false, true, true, false, true, false};
 
+    int defaultValue = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +49,7 @@ public class Tabla3b extends AppCompatActivity {
         tabla3bGridView.setExpanded(true);
 
         TextView tabla3bText2 = (TextView) findViewById(R.id.tabla3bText2);
-        int value = getIntent().getIntExtra("imageCounter", ImageAdapter.imageCounter);
+        int value = getIntent().getIntExtra("counter", defaultValue);
         tabla3bText2.setText(Integer.toString(value));
 
         Button button = (Button) findViewById(R.id.button);

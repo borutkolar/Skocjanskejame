@@ -5,6 +5,7 @@
     android:layout_margin="20dp">
 
     <RelativeLayout
+        android:paddingBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -59,6 +60,9 @@
             android:layout_margin="15dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_below="@id/tabla4Grid"/>
+            android:layout_below="@id/tabla4Grid"
+            android:background="@drawable/custombutton"
+            android:textColor="@color/buttonTextColor"
+            android:textSize="20dp"/>
     </RelativeLayout>
 </ScrollView>

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     android:padding="10dp"
-    android:background="@color/mainColor">
+    android:background="@color/popupBackground">
 
     <android.parkskocjanskejame.utils.CustomTextView
         android:id="@+id/helppopupText1"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/navodila1"
         android:textColor="@color/textColor"
-        android:textSize="22dp"
+        android:textSize="20dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
@@ -22,8 +22,8 @@
         android:layout_height="wrap_content"
         android:text="@string/navodila2"
         android:textColor="@color/textColor"
-        android:textSize="17dp"
-        android:layout_marginTop="14dp"
+        android:textSize="16dp"
+        android:layout_marginTop="11dp"
         android:layout_below="@+id/helppopupText1"
         android:layout_alignParentStart="true" />
 
@@ -35,7 +35,7 @@
         android:text="@string/zapri"
         android:textColor="@color/buttonTextColor"
         android:textSize="18dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="23dp"
         android:layout_below="@+id/helppopupText2"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

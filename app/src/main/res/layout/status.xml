@@ -19,26 +19,103 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp" />
 
-    <GridView
-        android:id="@+id/statusGrid"
+    <LinearLayout
+        android:id="@+id/linearlayout1"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:numColumns="4"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
-        android:layout_below="@+id/statusText1"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/statusText1">
+
+        <ImageView
+            android:id="@+id/znacka1"
+            android:alpha="0.2"
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/znacka1" />
+
+        <ImageView
+            android:id="@+id/znacka2"
+            android:alpha="0.2"
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/znacka2" />
+
+        <ImageView
+            android:id="@+id/znacka3"
+            android:alpha="0.2"
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/znacka3" />
+
+        <ImageView
+            android:id="@+id/znacka4"
+            android:alpha="0.2"
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/znacka4" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearlayout1">
+
+        <ImageView
+            android:id="@+id/znacka5"
+            android:alpha="0.2"
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/znacka5" />
+
+        <ImageView
+            android:id="@+id/znacka6"
+            android:alpha="0.2"
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/znacka6" />
+
+        <ImageView
+            android:id="@+id/znacka7"
+            android:alpha="0.2"
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/znacka7" />
+
+        <ImageView
+            android:id="@+id/znacka8"
+            android:alpha="0.2"
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:src="@drawable/znacka8" />
+    </LinearLayout>
 
     <android.parkskocjanskejame.utils.CustomTextView
         android:id="@+id/statusText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"
-        android:text="0"
+        android:text="1"
         android:textColor="@color/textColor"
         android:textSize="40dp"
-        android:layout_below="@+id/statusGrid"
+        android:layout_below="@+id/linearlayout2"
         android:layout_alignStart="@+id/statusText1" />
 
     <android.parkskocjanskejame.utils.CustomTextView

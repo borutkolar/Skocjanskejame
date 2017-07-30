@@ -14,7 +14,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.test.mock.MockPackageManager;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -66,13 +65,13 @@ public class NFCScan extends AppCompatActivity {
         final ImageView board = (ImageView) findViewById(R.id.nfcscanImage);
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
-            int i = 0;
+            int i = 1;
             @Override
             public void run() {
                 board.setImageResource(images[i]);
-                i++;
-                if (i > (images.length - 1)) {
-                    i = 0;
+                i--;
+                if (i < 0) {
+                    i = 1;
                 }
                 handler.postDelayed(this, 2000);
             }
