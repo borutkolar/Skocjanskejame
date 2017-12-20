@@ -14,10 +14,9 @@
         android:gravity="center"
         android:text="@string/status"
         android:textColor="@color/textColor"
-        android:textSize="50dp"
+        android:textSize="45dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp" />
+        android:layout_centerHorizontal="true" />
 
     <LinearLayout
         android:id="@+id/linearlayout1"
@@ -114,7 +113,7 @@
         android:layout_marginStart="62dp"
         android:text="1"
         android:textColor="@color/textColor"
-        android:textSize="40dp"
+        android:textSize="35dp"
         android:layout_below="@+id/linearlayout2"
         android:layout_alignStart="@+id/statusText1" />
 
@@ -124,7 +123,7 @@
         android:layout_height="wrap_content"
         android:text="/8"
         android:textColor="@color/textColor"
-        android:textSize="40dp"
+        android:textSize="35dp"
         android:layout_alignBaseline="@+id/statusText2"
         android:layout_alignBottom="@+id/statusText2"
         android:layout_toEndOf="@+id/statusText2" />

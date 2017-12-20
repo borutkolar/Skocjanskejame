@@ -3,6 +3,7 @@ package android.parkskocjanskejame;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Handler;
+import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.RateView;
 import android.parkskocjanskejame.utils.RateViewListener;
 import android.support.v7.app.AlertDialog;
@@ -37,6 +38,8 @@ public class Tabla7 extends AppCompatActivity implements RateViewListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla7);
+
+        Constants.status++;
 
        /* //Setup the number font
         font = Typeface.createFromAsset(getAssets(), "dinFont.ttf");

@@ -8,6 +8,7 @@ import android.parkskocjanskejame.utils.ImageAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Tabla26 extends AppCompatActivity {
@@ -22,6 +23,8 @@ public class Tabla26 extends AppCompatActivity {
             {null, R.string.tabla26popup1, null, null, R.string.tabla26popup4, R.string.tabla26popup5, null};
     public Boolean[] answers = {true, false, true, true, false, false, true};
 
+    public static int counter = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,28 +32,13 @@ public class Tabla26 extends AppCompatActivity {
 
         Constants.status++;
 
-        ExpandableHeightGridView tabla26GridView = (ExpandableHeightGridView) findViewById(R.id.tabla26Grid);
-        //ImageAdapter tabla26ImageAdapter = new ImageAdapter(Tabla26.this, tabla26Images, tabla26Sounds, tabla26CheckboxSelection, answers, popupTexts);
-        //tabla26GridView.setAdapter(tabla26ImageAdapter);
-        tabla26GridView.setExpanded(true);
-
         Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean equal = true;
-                for (int i = 0; i < tabla26CheckboxSelection.length; i++) {
-                    if (tabla26CheckboxSelection[i] != answers[i]) {
-                        equal = false;
-                    }
-                }
-                if (equal == true) {
-                    Intent intent = new Intent(getApplicationContext(), Cestitamo.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Napačen odgovor!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        TextView textView = (TextView) findViewById(R.id.tabla26Text2);
+
+        ExpandableHeightGridView tabla26GridView = (ExpandableHeightGridView) findViewById(R.id.tabla26Grid);
+        ImageAdapter tabla26ImageAdapter = new ImageAdapter
+                (Tabla26.this, tabla26Images, tabla26Sounds, tabla26CheckboxSelection, answers, popupTexts, button, textView, counter);
+        tabla26GridView.setAdapter(tabla26ImageAdapter);
+        tabla26GridView.setExpanded(true);
     }
 }

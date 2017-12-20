@@ -5,9 +5,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.parkskocjanskejame.Cestitamo;
 import android.parkskocjanskejame.R;
-import android.parkskocjanskejame.Tabla3b;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ImageAdapter extends BaseAdapter {
     Context context;
@@ -27,12 +27,16 @@ public class ImageAdapter extends BaseAdapter {
     public static boolean[] checkboxSelection;
     public static Boolean[] answers;
     public static Integer[] popupTexts;
+
     public static int counter;
+
+    Button button;
+    TextView textView;
 
     AlertDialog alert;
     MediaPlayer mediaPlayer;
 
-    public ImageAdapter(Context c, Integer[] images, Integer[] sounds, boolean[] checkboxSelection, Boolean[] answers, Integer[] popupTexts) {
+    public ImageAdapter (Context c, Integer[] images, Integer[] sounds, boolean[] checkboxSelection, Boolean[] answers, Integer[] popupTexts, Button button, TextView textView, int counter) {
         this.context = c;
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.images = images;
@@ -40,6 +44,9 @@ public class ImageAdapter extends BaseAdapter {
         this.checkboxSelection = checkboxSelection;
         this.answers = answers;
         this.popupTexts = popupTexts;
+        this.button = button;
+        this.textView = textView;
+        this.counter = counter;
     }
 
     public int getCount() {
@@ -80,14 +87,14 @@ public class ImageAdapter extends BaseAdapter {
                 int idImage = viewHolder.imageView.getId();
                 int idCheckbox = viewHolder.checkBox.getId();
                 if (answers[idImage] == true) {
-                    counter++;
-                    Intent intent = new Intent(context, Tabla3b.class);
-                    intent.putExtra("counter", counter);
-                    context.startActivity(intent);
                     if (checkboxSelection[idCheckbox] == true) {
+                        counter--;
+                        textView.setText(Integer.toString(counter));
                         viewHolder.checkBox.setChecked(false);
                         checkboxSelection[idCheckbox] = false;
                     } else {
+                        counter++;
+                        textView.setText(Integer.toString(counter));
                         createSound(idImage);
                         viewHolder.checkBox.setChecked(true);
                         checkboxSelection[idCheckbox] = true;
@@ -96,6 +103,25 @@ public class ImageAdapter extends BaseAdapter {
                 } else {
                     createSound(idImage);
                     showPopup(idImage);
+                }
+            }
+        });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopPlaying();
+                boolean equal = true;
+                for (int i = 0; i < checkboxSelection.length; i++) {
+                    if (checkboxSelection[i] != answers[i]) {
+                        equal = false;
+                    }
+                }
+                if (equal == true) {
+                    Intent intent = new Intent(context, Cestitamo.class);
+                    context.startActivity(intent);
+                } else {
+                    Toast.makeText(context, "Napačen odgovor!", Toast.LENGTH_LONG).show();
                 }
             }
         });

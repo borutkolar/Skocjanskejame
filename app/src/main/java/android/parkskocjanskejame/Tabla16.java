@@ -3,6 +3,7 @@ package android.parkskocjanskejame;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Handler;
+import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.RateView;
 import android.parkskocjanskejame.utils.RateViewListener;
 import android.support.v7.app.AlertDialog;
@@ -36,6 +37,8 @@ public class Tabla16 extends AppCompatActivity implements RateViewListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla16);
 
+        Constants.status++;
+
        /* //Setup the number font
         font = Typeface.createFromAsset(getAssets(), "dinFont.ttf");
         confidence = (TextView)findViewById(R.id.confidence);
@@ -61,10 +64,10 @@ public class Tabla16 extends AppCompatActivity implements RateViewListener {
         alert.setCancelable(false);
         alert.show();
 
-        TextView text = (TextView) v.findViewById(R.id.textView23);
+        /*TextView text = (TextView) v.findViewById(R.id.textView23);
         text.setText(R.string.tabla19razlaga);
         final ImageView tabla = (ImageView) v.findViewById(R.id.imageTabla3a);
-        tabla.setImageResource(R.drawable.tabla16);
+        tabla.setImageResource(R.drawable.tabla16);*/
 
         if (prav) {
             //Continue button

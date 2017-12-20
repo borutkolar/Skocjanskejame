@@ -25,9 +25,8 @@
             android:layout_height="wrap_content"
             android:text="0"
             android:textColor="@color/textColor"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:layout_below="@+id/tabla4Text"
-            android:layout_alignStart="@+id/tabla4Text"
             android:layout_marginTop="10dp"/>
 
         <android.parkskocjanskejame.utils.CustomTextView
@@ -36,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="/6"
             android:textColor="@color/textColor"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:layout_alignBaseline="@+id/tabla4Text2"
             android:layout_alignBottom="@+id/tabla4Text2"
             android:layout_toEndOf="@+id/tabla4Text2"
@@ -50,13 +49,13 @@
             android:numColumns="2"
             android:verticalSpacing="5dp"
             android:horizontalSpacing="5dp"
-            android:layout_below="@+id/tabla4Text3"/>
+            android:layout_below="@+id/tabla4Text2"/>
 
         <android.parkskocjanskejame.utils.CustomButton
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Odgovori"
+            android:text="@string/odgovori"
             android:layout_margin="15dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"

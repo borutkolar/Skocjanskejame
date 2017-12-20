@@ -8,6 +8,7 @@ import android.parkskocjanskejame.utils.ImageAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Tabla4 extends AppCompatActivity {
@@ -24,6 +25,8 @@ public class Tabla4 extends AppCompatActivity {
     public Boolean[] answers =
             {false, true, false, true, true, false, true, true, true};
 
+    public static int counter = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,28 +34,13 @@ public class Tabla4 extends AppCompatActivity {
 
         Constants.status++;
 
-        ExpandableHeightGridView tabla4GridView = (ExpandableHeightGridView) findViewById(R.id.tabla4Grid);
-        //ImageAdapter tabla4ImageAdapter = new ImageAdapter(Tabla4.this, tabla4Images, tabla26Sounds, tabla4CheckboxSelection, answers, popupTexts);
-        //tabla4GridView.setAdapter(tabla4ImageAdapter);
-        tabla4GridView.setExpanded(true);
-
         Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean equal = true;
-                for (int i = 0; i < tabla4CheckboxSelection.length; i++) {
-                    if (tabla4CheckboxSelection[i] != answers[i]) {
-                        equal = false;
-                    }
-                }
-                if (equal == true) {
-                    Intent intent = new Intent(getApplicationContext(), Cestitamo.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Napačen odgovor!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+        TextView textView = (TextView) findViewById(R.id.tabla4Text2);
+
+        ExpandableHeightGridView tabla4GridView = (ExpandableHeightGridView) findViewById(R.id.tabla4Grid);
+        ImageAdapter tabla4ImageAdapter = new ImageAdapter
+                (Tabla4.this, tabla4Images, tabla26Sounds, tabla4CheckboxSelection, answers, popupTexts, button, textView, counter);
+        tabla4GridView.setAdapter(tabla4ImageAdapter);
+        tabla4GridView.setExpanded(true);
     }
 }

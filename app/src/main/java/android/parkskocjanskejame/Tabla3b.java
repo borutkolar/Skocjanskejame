@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import static android.R.attr.defaultValue;
 
 public class Tabla3b extends AppCompatActivity {
@@ -35,7 +37,7 @@ public class Tabla3b extends AppCompatActivity {
     public Boolean[] answers =
             {true, true, false, true, false, true, true, false, true, false};
 
-    int defaultValue = 0;
+    public static int counter = 0;
 
 
     @Override
@@ -43,32 +45,13 @@ public class Tabla3b extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla3b);
 
+        Button button = (Button) findViewById(R.id.button);
+        TextView textView = (TextView) findViewById(R.id.tabla3bText2);
+
         ExpandableHeightGridView tabla3bGridView = (ExpandableHeightGridView) findViewById(R.id.tabla3bGrid);
-        ImageAdapter tabla3bImageAdapter = new ImageAdapter(Tabla3b.this, tabla3bImages, tabla3bSounds, tabla3bCheckboxSelection, answers, popupTexts);
+        ImageAdapter tabla3bImageAdapter = new ImageAdapter
+                (Tabla3b.this, tabla3bImages, tabla3bSounds, tabla3bCheckboxSelection, answers, popupTexts, button, textView, counter);
         tabla3bGridView.setAdapter(tabla3bImageAdapter);
         tabla3bGridView.setExpanded(true);
-
-        TextView tabla3bText2 = (TextView) findViewById(R.id.tabla3bText2);
-        int value = getIntent().getIntExtra("counter", defaultValue);
-        tabla3bText2.setText(Integer.toString(value));
-
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean equal = true;
-                for (int i = 0; i < tabla3bCheckboxSelection.length; i++) {
-                    if (tabla3bCheckboxSelection[i] != answers[i]) {
-                        equal = false;
-                    }
-                }
-                if (equal == true) {
-                    Intent intent = new Intent(getApplicationContext(), Cestitamo.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(getApplicationContext(), "Napačen odgovor!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
     }
 }
