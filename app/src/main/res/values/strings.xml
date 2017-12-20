@@ -53,14 +53,14 @@
     <string name="tabla7razlaga">V podzemlju ni svetlobe, zato rastlinske vrste tam ne morejo uspevati.</string>
     <string name="tabla10">Najhitrejši plenilec na svetu je gepard.</string>
     <string name="tabla10razlaga">Najhitrejši plenilec je sokol selec (Falco peregrinus), ki v letu s hitrostjo do 320 km/h pleni druge ptice.</string>
-    <string name="tabla16">Glavni gonilec vetra so temperaturne razlike v ozračju</string>
-    <string name="tabla19">Ali je reka Reka najdaljša ponikalnica v Sloveniji?</string>
     <string name="navodila1">NAVODILA ZA UPORABO</string>
     <string name="navodila2">Za uporabo aplikacije bo potrebna podatkovna povezava. Aplikacijo pusti odprto vso pot, telefon pa pospravi v žep in uživaj v naravi.
                                 Ko prideš v bližino table z interaktivnimi vsebinami, te bo telefon trikrat z vibracijo opozoril, da te pri tej tabli čaka naloga.
                                 Poišči NFC značko in jo z uporabo telefona skeniraj. Pri izbranih tablah, kjer je značka, te čaka vprašanje (ki je vezano na tablo) in nagrada.
                                 Na vprašanja odgovoriš tako, da s prstom povlečeš na odgovor DA ali NE, ali pa da izbereš slike, ki so pravilen odgovor na vprašanje. Tudi če na
                                 vprašanje odgovoriš napačno, imaš ponovno možnost za pravilen odgovor in nagrado – tako da ne obupaj in nadaljuj do konca učne poti.</string>
+    <string name="tabla16">Gibanje zračnih mas (veter) nastane zaradi temperaturnih razlik v ozračju.</string>
+    <string name="tabla19">Ali je reka Reka je najdaljša ponikalnica v Sloveniji?</string>
     <string name="tabla19razlaga">Reka Reka je najdaljša ponikalnica v Sloveniji, ki po 50 km površinskega toka ponikne v Škocjanskih jamah.</string>
 
 </resources>
