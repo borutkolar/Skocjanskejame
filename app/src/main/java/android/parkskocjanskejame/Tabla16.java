@@ -64,10 +64,10 @@ public class Tabla16 extends AppCompatActivity implements RateViewListener {
         alert.setCancelable(false);
         alert.show();
 
-        /*TextView text = (TextView) v.findViewById(R.id.textView23);
-        text.setText(R.string.tabla19razlaga);
+        TextView text = (TextView) v.findViewById(R.id.textView23);
+        text.setText(R.string.tabla16razlaga);
         final ImageView tabla = (ImageView) v.findViewById(R.id.imageTabla3a);
-        tabla.setImageResource(R.drawable.tabla16);*/
+        tabla.setImageResource(R.drawable.tabla16);
 
         if (prav) {
             //Continue button
