@@ -2,6 +2,7 @@ package android.parkskocjanskejame;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Handler;
 import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.RateView;
 import android.parkskocjanskejame.utils.RateViewListener;
@@ -30,6 +31,7 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
     Typeface font;
     ScrollView sv;
     String odgovor;
+    int images10[] = {R.drawable.tabla10slika1, R.drawable.tabla10slika2};
 
 
     @Override
@@ -66,11 +68,23 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
 
         TextView text = (TextView) v.findViewById(R.id.textView23);
         text.setText(R.string.tabla10razlaga);
-        /*ImageView slika1 = (ImageView) v.findViewById(R.id.imageView);
-        slika1.setImageResource(R.drawable.tabla7slika1);
-        ImageView slika2 = (ImageView) v.findViewById(R.id.imageView2);
-        slika2.setImageResource(R.drawable.tabla7slika2);*/
 
+        final ImageView tabla = (ImageView) v.findViewById(R.id.imageTabla3a);
+        tabla.setImageResource(R.drawable.tabla10slika1);
+        final Handler handler = new Handler();
+        Runnable runnable = new Runnable() {
+            int i = 1;
+            @Override
+            public void run() {
+                tabla.setImageResource(images10[i]);
+                i--;
+                if (i < (0)) {
+                    i = 1;
+                }
+                handler.postDelayed(this, 2000);
+            }
+        };
+        handler.postDelayed(runnable, 2000);
         if (prav) {
             //Retry button
             Button continueButton = (Button) v.findViewById(R.id.button2345);
