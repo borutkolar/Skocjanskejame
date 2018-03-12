@@ -23,7 +23,7 @@
     <string name="cestitamo26b">Hiker of the education trail</string>
     <string name="naprej">Next</string>
     <string name="NFC">NFC is not turned on</string>
-    <string name="status">STATUS</string>
+    <string name="status">TITLE</string>
     <string name="status2">Put away your phone. Near the next badge, your phone will alert you</string>
     <string name="tabla3b">Tick/Mark the pictures of birds living on precipitous walls</string>
     <string name="odgovori">Answer</string>
@@ -61,5 +61,6 @@
                                 Find the NFC tag and scan it using your phone. On selected signs, where a there is a badge, a question and a prize waits for you. You answer the questions
                                 by dragging your finger to YES or NO, or selecting pictures that are the correct answer. Even if you answer a question incorrectly, you have a chance to get
                                 the correct answer and reward – so do not give up and continue to the end of the education trail.
-</string>
+    </string>
+    <string name="napacenOdgovor">Wrong answer!</string>
 </resources>

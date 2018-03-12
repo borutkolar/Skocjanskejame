@@ -55,15 +55,6 @@ public class LocationSearch extends AppCompatActivity {
 
         gpsTracker = new GPSTracker(LocationSearch.this);
 
-        ImageView leftArrow = (ImageView) findViewById(R.id.leftarrow);
-        leftArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), HomeScreen.class);
-                startActivity(i);
-            }
-        });
-
         ImageView help = (ImageView) findViewById(R.id.help);
         help.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +69,12 @@ public class LocationSearch extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), NFCScan.class);
                 startActivity(intent);
+                finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

@@ -43,4 +43,8 @@ public class Tabla4 extends AppCompatActivity {
         tabla4GridView.setAdapter(tabla4ImageAdapter);
         tabla4GridView.setExpanded(true);
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

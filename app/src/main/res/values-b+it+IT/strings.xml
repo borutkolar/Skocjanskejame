@@ -23,7 +23,7 @@
     <string name="cestitamo26b">Viaggiatore/viaggiatrice del percorso didattico</string>
     <string name="naprej">Avanti</string>
     <string name="NFC">NFC non è acceso</string>
-    <string name="status">STATO</string>
+    <string name="status">TITOLO</string>
     <string name="status2">Metti via il telefono. Il telefono ti avvertirà quando sarete vicino al prossimo distintivo</string>
     <string name="tabla3b">Scegli le immagini di uccelli che vivono sulle pareti rocciose</string>
     <string name="odgovori">Rispondi</string>
@@ -62,5 +62,6 @@
                                 Rispondi alle domande trascinando la risposta su SI o NO, o scegliendo le immagini che sono la risposta giusta alla domanda.
                                 Anche se si risponde a una domanda in modo errato, si ha la possibilità di riprovare a rispondere e ottenere la ricompensa – quindi non arrenderti e continua
                                 fino alla fine del percorso didattico.
-</string>
+    </string>
+    <string name="napacenOdgovor">Risposta sbagliata!</string>
 </resources>

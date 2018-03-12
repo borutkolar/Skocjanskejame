@@ -4,6 +4,7 @@ package android.parkskocjanskejame;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.Functions;
@@ -80,15 +81,16 @@ public class Status extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), NFCScan.class);
                 startActivity(intent);
+                finish();
             }
         });
 
-        ImageView leftArrow = (ImageView) findViewById(R.id.leftarrow);
-        leftArrow.setOnClickListener(new View.OnClickListener() {
+        ImageView reward1 = (ImageView) findViewById(R.id.znacka9);
+        reward1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), Cestitamo.class);
-                startActivity(i);
+                Intent intent = new Intent(getApplicationContext(), Reward.class);
+                startActivity(intent);
             }
         });
 
@@ -134,7 +136,35 @@ public class Status extends AppCompatActivity {
                     alertDialog.setView(view);
                     alert = alertDialog.create();
                     alert.show();
-                    imageView.setOnClickListener(new View.OnClickListener() {
+                    TextView naziv = (TextView) view.findViewById(R.id.naziv);
+                    switch (id) {
+                        case 0:
+                            naziv.setText(R.string.cestitamo1b);
+                            break;
+                        case 1:
+                            naziv.setText(R.string.cestitamo3b);
+                            break;
+                        case 2:
+                            naziv.setText(R.string.cestitamo4b);
+                            break;
+                        case 3:
+                            naziv.setText(R.string.cestitamo7b);
+                            break;
+                        case 4:
+                            naziv.setText(R.string.cestitamo10b);
+                            break;
+                        case 5:
+                            naziv.setText(R.string.cestitamo16b);
+                            break;
+                        case 6:
+                            naziv.setText(R.string.cestitamo19b);
+                            break;
+                        case 7:
+                            naziv.setText(R.string.cestitamo26b);
+                            break;
+                    }
+                    ImageView close = (ImageView) view.findViewById(R.id.close);
+                    close.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             alert.cancel();
@@ -143,5 +173,9 @@ public class Status extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

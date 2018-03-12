@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static android.parkskocjanskejame.R.id.cestitamoText1;
-
 public class Cestitamo extends AppCompatActivity {
 
     @Override
@@ -27,6 +25,7 @@ public class Cestitamo extends AppCompatActivity {
         TextView cestitamoText1 = (TextView) findViewById(R.id.cestitamoText1);
         ImageView cestitamoImage = (ImageView) findViewById(R.id.cestitamoImage);
         TextView cestitamoText2 = (TextView) findViewById(R.id.cestitamoText2);
+        TextView cestitamoText3 = (TextView) findViewById(R.id.cestitamoText3);
 
         switch (Constants.status) {
             case 1:
@@ -75,6 +74,7 @@ public class Cestitamo extends AppCompatActivity {
                 cestitamoText1.setText(R.string.cestitamo26a);
                 cestitamoImage.setImageResource(R.drawable.znacka8);
                 cestitamoText2.setText(R.string.cestitamo26b);
+                cestitamoText3.setText(R.string.cestitamo26c);
                 Constants.alpha[7] = true;
                 break;
         }
@@ -85,6 +85,7 @@ public class Cestitamo extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Status.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -95,5 +96,9 @@ public class Cestitamo extends AppCompatActivity {
                 Functions.helpPopup(Cestitamo.this);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

@@ -121,7 +121,7 @@ public class ImageAdapter extends BaseAdapter {
                     Intent intent = new Intent(context, Cestitamo.class);
                     context.startActivity(intent);
                 } else {
-                    Toast.makeText(context, "Napačen odgovor!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, context.getResources().getString(R.string.napacenOdgovor) + Integer.toString(counter) + "/6).", Toast.LENGTH_LONG).show();
                 }
             }
         });

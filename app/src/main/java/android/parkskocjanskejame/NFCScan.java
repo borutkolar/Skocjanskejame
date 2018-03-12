@@ -78,20 +78,6 @@ public class NFCScan extends AppCompatActivity {
         };
         handler.postDelayed(runnable, 2000);
 
-        ImageView leftArrow = (ImageView) findViewById(R.id.leftarrow);
-        leftArrow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Constants.status == 0) {
-                    Intent i1 = new Intent(getApplicationContext(), LocationSearch.class);
-                    startActivity(i1);
-                } else {
-                    Intent i1 = new Intent(getApplicationContext(), Status.class);
-                    startActivity(i1);
-                }
-            }
-        });
-
         ImageView help = (ImageView) findViewById(R.id.help);
         help.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -180,5 +166,9 @@ public class NFCScan extends AppCompatActivity {
     protected void onPause() {
         nfcAdapter.disableForegroundDispatch(this);
         super.onPause();
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }

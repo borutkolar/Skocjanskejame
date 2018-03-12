@@ -94,6 +94,7 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
                 public void onClick(View v) {
                     Intent intent = new Intent(getApplicationContext(), Tabla3b.class);
                     startActivity(intent);
+                    finish();
                 }
             });
         } else {
@@ -110,5 +111,8 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
 
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 }
 

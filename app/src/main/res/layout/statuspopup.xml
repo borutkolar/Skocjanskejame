@@ -6,8 +6,31 @@
     android:padding="10dp">
 
     <ImageView
+        android:id="@+id/close"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/close" />
+
+    <ImageView
         android:id="@+id/statuspopupImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/znacka1"/>
+        android:layout_alignBottom="@+id/naziv"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/znacka1" />
+
+    <android.parkskocjanskejame.utils.CustomTextView
+        android:id="@+id/naziv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="22dp"
+        android:gravity="center"
+        android:text="@string/cestitamo1b"
+        android:textColor="@color/textColor"
+        android:textSize="25dp" />
+
 </RelativeLayout>

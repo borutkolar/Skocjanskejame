@@ -78,6 +78,7 @@ public class Tabla19 extends AppCompatActivity implements RateViewListener {
                 public void onClick(View v) {
                     Intent intent = new Intent(getApplicationContext(), Cestitamo.class);
                     startActivity(intent);
+                    finish();
                 }
             });
 
@@ -96,6 +97,9 @@ public class Tabla19 extends AppCompatActivity implements RateViewListener {
 
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 }
 
 

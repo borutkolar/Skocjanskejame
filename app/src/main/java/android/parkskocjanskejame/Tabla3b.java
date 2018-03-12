@@ -54,4 +54,8 @@ public class Tabla3b extends AppCompatActivity {
         tabla3bGridView.setAdapter(tabla3bImageAdapter);
         tabla3bGridView.setExpanded(true);
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

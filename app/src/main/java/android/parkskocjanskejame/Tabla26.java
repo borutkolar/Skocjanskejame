@@ -41,4 +41,8 @@ public class Tabla26 extends AppCompatActivity {
         tabla26GridView.setAdapter(tabla26ImageAdapter);
         tabla26GridView.setExpanded(true);
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

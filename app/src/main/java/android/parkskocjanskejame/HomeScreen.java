@@ -21,6 +21,7 @@ public class HomeScreen extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), LocationSearch.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -31,5 +32,9 @@ public class HomeScreen extends AppCompatActivity {
                 Functions.helpPopup(HomeScreen.this);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
     }
 }
