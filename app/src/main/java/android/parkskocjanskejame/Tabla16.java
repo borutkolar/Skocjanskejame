@@ -95,6 +95,15 @@ public class Tabla16 extends AppCompatActivity implements RateViewListener {
 
         }
 
+        tabla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ImageFS.class);
+                intent.putExtra("image", 16);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override

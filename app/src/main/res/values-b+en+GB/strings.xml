@@ -12,7 +12,7 @@
     <string name="cestitamo10a">Congratulations! You picked up the fifth badge</string>
     <string name="cestitamo16a">Congratulations! You picked up the sixth badge</string>
     <string name="cestitamo19a">Congratulations! You picked up the seventh badge</string>
-    <string name="cestitamo26a">Congratulations! You picked up the eighth badge</string>
+    <string name="cestitamo26a">ČESTITAMO! You successfully finished the education trial and received badge</string>
     <string name="cestitamo1b">Amateur researcher of the education trail</string>
     <string name="cestitamo3b">Forester of the education trail</string>
     <string name="cestitamo4b">Observer of animals</string>
@@ -21,6 +21,7 @@
     <string name="cestitamo16b">Researcher of wind</string>
     <string name="cestitamo19b">Cave explorer</string>
     <string name="cestitamo26b">Hiker of the education trail</string>
+    <string name="cestitamo26c">You can pick up your badge at the information desk of Škocjan Caves Park.</string>
     <string name="naprej">Next</string>
     <string name="NFC">NFC is not turned on</string>
     <string name="status">TITLE</string>

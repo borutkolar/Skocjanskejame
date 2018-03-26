@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/popupTextColor"
         android:text="TextView"
+        android:textSize="20dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
@@ -21,16 +22,28 @@
 
     <ImageView
         android:id="@+id/imageTabla3a"
+        android:scaleType="fitXY"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:adjustViewBounds="true"
         android:layout_marginTop="25dp"
+        android:layout_marginBottom="50dp"
         android:layout_below="@+id/textView23"
-        android:layout_above="@+id/button2345"
-        android:layout_alignStart="@+id/button2345"
-        android:layout_marginBottom="111dp" />
+        android:layout_above="@+id/year"
+        android:layout_alignStart="@+id/button2345"/>
+
+    <android.parkskocjanskejame.utils.CustomTextView
+        android:id="@+id/year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:textColor="@color/popupTextColor"
+        android:text=""
+        android:textSize="15dp"
+        android:layout_above="@id/button2345"
+        android:layout_alignStart="@+id/button2345"/>
 
     <android.parkskocjanskejame.utils.CustomButton
         android:id="@+id/button2345"

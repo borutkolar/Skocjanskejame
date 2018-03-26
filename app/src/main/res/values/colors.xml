@@ -9,10 +9,9 @@
     <color name="buttonTextColor">#FFFFFF</color>
     <color name="popupBackground">#FFFFFF</color>
     <color name="falseColor">#000000</color>
-    <color name="trueColor">#72EF52</color>
     <color name="popupTextColor">#000000</color>
     <color name="circleColor">#000000</color>
     <color name="falseAreaColor">#ff0101</color>
-    <color name="trueAreaColor">#0ef902</color>
+    <color name="trueAreaColor">#79a52c</color>
 
 </resources>

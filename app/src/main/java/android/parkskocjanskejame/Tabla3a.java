@@ -29,6 +29,8 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
     LayoutInflater inflater;
     View view;
     int images3a[] = {R.drawable.kras1, R.drawable.kras2};
+    String years[] = {"Leto: 2000", "Leto: 1800"};
+    boolean FSImage = true;
 
 
     @Override
@@ -68,13 +70,19 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
 
         final ImageView tabla = (ImageView) v.findViewById(R.id.imageTabla3a);
         tabla.setImageResource(R.drawable.kras1);
+
+        final TextView year = (TextView) v.findViewById(R.id.year);
+        year.setText(years[0]);
+
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             int i = 1;
             @Override
             public void run() {
                 tabla.setImageResource(images3a[i]);
+                year.setText(years[i]);
                 i--;
+                FSImage = !FSImage;
                 if (i < (0)) {
                     i = 1;
                 }
@@ -82,7 +90,6 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
             }
         };
         handler.postDelayed(runnable, 2000);
-
 
 
         if (prav) {
@@ -109,7 +116,22 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
             });
         }
 
+        tabla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ImageFS.class);
+                if (FSImage) {
+                    intent.putExtra("image", 31);
+                    startActivity(intent);
+                } else {
+                    intent.putExtra("image", 32);
+                    startActivity(intent);
+                }
+            }
+        });
+
     }
+
 
     @Override
     public void onBackPressed() {

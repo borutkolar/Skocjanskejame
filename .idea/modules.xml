@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ParkSkocjanskejame.iml" filepath="$PROJECT_DIR$/ParkSkocjanskejame.iml" />
       <module fileurl="file://C:\Users\Nemanja\Desktop\Faks\PROJEKT\Skocjanskejame\ParkSkocjanskejame.iml" filepath="C:\Users\Nemanja\Desktop\Faks\PROJEKT\Skocjanskejame\ParkSkocjanskejame.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Skocjanskejame.iml" filepath="$PROJECT_DIR$/Skocjanskejame.iml" />
       <module fileurl="file://E:\AndroidStudio\ParkSkocjanskejame\Skocjanskejame.iml" filepath="E:\AndroidStudio\ParkSkocjanskejame\Skocjanskejame.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

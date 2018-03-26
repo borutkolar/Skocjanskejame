@@ -157,7 +157,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearlayout3"
         android:layout_alignParentEnd="true"
-        android:text="/5"
+        android:text="/4"
         android:textColor="@color/textColor"
         android:textSize="25dp"
         android:layout_marginTop="10dp"
@@ -199,15 +199,6 @@
 
         <ImageView
             android:id="@+id/znacka12"
-            android:alpha="0.2"
-            android:layout_margin="5dp"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:src="@drawable/znacka8" />
-
-        <ImageView
-            android:id="@+id/znacka13"
             android:alpha="0.2"
             android:layout_margin="5dp"
             android:layout_width="0dp"

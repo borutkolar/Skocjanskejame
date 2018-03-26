@@ -72,8 +72,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Reward"
-            android:theme="@style/fullscreen">
-        </activity>
+            android:theme="@style/fullscreen"/>
+        <activity
+            android:name=".ImageFS"
+            android:theme="@style/fullscreen"/>
     </application>
 
 </manifest>

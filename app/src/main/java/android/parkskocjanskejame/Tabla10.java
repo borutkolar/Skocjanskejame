@@ -70,21 +70,8 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
         text.setText(R.string.tabla10razlaga);
 
         final ImageView tabla = (ImageView) v.findViewById(R.id.imageTabla3a);
-        tabla.setImageResource(R.drawable.tabla10slika1);
-        final Handler handler = new Handler();
-        Runnable runnable = new Runnable() {
-            int i = 1;
-            @Override
-            public void run() {
-                tabla.setImageResource(images10[i]);
-                i--;
-                if (i < (0)) {
-                    i = 1;
-                }
-                handler.postDelayed(this, 2000);
-            }
-        };
-        handler.postDelayed(runnable, 2000);
+        tabla.setImageResource(R.drawable.tabla10slika2);
+
         if (prav) {
             //Retry button
             Button continueButton = (Button) v.findViewById(R.id.button2345);
@@ -107,8 +94,16 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
                     finish();
                 }
             });
-
         }
+
+        tabla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ImageFS.class);
+                intent.putExtra("image", 10);
+                startActivity(intent);
+            }
+        });
 
     }
 

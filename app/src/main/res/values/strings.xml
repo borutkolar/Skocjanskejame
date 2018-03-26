@@ -12,7 +12,7 @@
     <string name="cestitamo10a">ČESTITAMO! Pobrali ste peto značko</string>
     <string name="cestitamo16a">ČESTITAMO! Pobrali ste šesto značko</string>
     <string name="cestitamo19a">ČESTITAMO! Pobrali ste sedmo značko</string>
-    <string name="cestitamo26a">ČESTITAMO! You successfully finished the education trial and received badge</string>
+    <string name="cestitamo26a">ČESTITAMO! Uspešno ste prišli do konca učne poti in prejeli značko</string>
     <string name="cestitamo1b">Začetnik raziskovalec/raziskovalka učne poti</string>
     <string name="cestitamo3b">Gozdovnik/gozdovnica učne poti</string>
     <string name="cestitamo4b">Opazovalec/opazovalka živali</string>
@@ -21,7 +21,7 @@
     <string name="cestitamo16b">Raziskovalec/raziskovalka vetra</string>
     <string name="cestitamo19b">Jamar/jamarka</string>
     <string name="cestitamo26b">Popotnik/popotnica učne poti</string>
-    <string name="cestitamo26c">You can pick up you badge at the information desk of park Škocjan.</string>
+    <string name="cestitamo26c">Svojo značko lahko prevzamete na informacijski točki parka Škocjanske jame.</string>
     <string name="naprej">Naprej</string>
     <string name="NFC">NFC ni vklopljen!</string>
     <string name="status">NAZIV</string>
@@ -64,6 +64,7 @@
     <string name="tabla16">Gibanje zračnih mas (veter) nastane zaradi temperaturnih razlik v ozračju.</string>
     <string name="tabla19">Ali je reka Reka je najdaljša ponikalnica v Sloveniji?</string>
     <string name="tabla19razlaga">Reka Reka je najdaljša ponikalnica v Sloveniji, ki po 50 km površinskega toka ponikne v Škocjanskih jamah.</string>
+    <string name="tabla16razlaga">Topel zrak se dviga, ker ima manjšo gostoto od hladnega, pri čemer prihaja do temperaturnih razlik v ozračju.</string>
     <string name="napacenOdgovor">Napačen odgovor! Izbral si premalo slik (</string>
 
 </resources>
