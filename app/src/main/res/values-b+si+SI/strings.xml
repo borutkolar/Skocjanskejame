@@ -6,14 +6,14 @@
     <string name="locationSearch">V bližini značke vas bo telefon na to opozoril</string>
     <string name="locationSearch2">Prosim počakajte na GPS signal. GPS ne deluje v zaprtih prostorih.</string>
     <string name="nfcScan">Poišči NFC značko in nanjo prisloni telefon</string>
-    <string name="cestitamo1a">ČESTITAMO! Pobrali ste prvo značko</string>
-    <string name="cestitamo3a">ČESTITAMO! Pobrali ste drugo značko</string>
-    <string name="cestitamo4a">ČESTITAMO! Pobrali ste tretjo značko</string>
-    <string name="cestitamo7a">ČESTITAMO! Pobrali ste četrto značko</string>
-    <string name="cestitamo10a">ČESTITAMO! Pobrali ste peto značko</string>
-    <string name="cestitamo16a">ČESTITAMO! Pobrali ste šesto značko</string>
-    <string name="cestitamo19a">ČESTITAMO! Pobrali ste sedmo značko</string>
-    <string name="cestitamo26a">ČESTITAMO! Uspešno ste prišli do konca učne poti in prejeli značko</string>
+    <string name="cestitamo1a">Čestitamo! Pobrali ste prvo značko</string>
+    <string name="cestitamo3a">Čestitamo! Pobrali ste drugo značko</string>
+    <string name="cestitamo4a">Čestitamo! Pobrali ste tretjo značko</string>
+    <string name="cestitamo7a">Čestitamo! Pobrali ste četrto značko</string>
+    <string name="cestitamo10a">Čestitamo! Pobrali ste peto značko</string>
+    <string name="cestitamo16a">Čestitamo! Pobrali ste šesto značko</string>
+    <string name="cestitamo19a">Čestitamo! Pobrali ste sedmo značko</string>
+    <string name="cestitamo26a">Čestitamo! Uspešno ste prišli do konca učne poti in prejeli značko</string>
     <string name="cestitamo1b">Začetnik raziskovalec/raziskovalka učne poti</string>
     <string name="cestitamo3b">Gozdovnik/gozdovnica učne poti</string>
     <string name="cestitamo4b">Opazovalec/opazovalka živali</string>
@@ -61,7 +61,11 @@
     <string name="tabla16">Gibanje zračnih mas (veter) nastane zaradi temperaturnih razlik v ozračju.</string>
     <string name="tabla19">Ali je reka Reka je najdaljša ponikalnica v Sloveniji?</string>
     <string name="tabla19razlaga">Reka Reka je najdaljša ponikalnica v Sloveniji, ki po 50 km površinskega toka ponikne v Škocjanskih jamah.</string>
-    <string name="tabla16razlaga">Topel zrak se dviga, ker ima manjšo gostoto od hladnega, pri čemer prihaja do temperaturnih razlik v ozračju.</string>
+    <string name="tabla16razlaga">Topel zrak se dviga, ker ima manjšo gostoto od hladnega, pri čemer prihaja do tlačnih razlik v ozračju.</string>
     <string name="napacenOdgovor">Napačen odgovor! Izbral si premalo slik (</string>
 
+    <string name="sova">http://www.studenti.famnit.upr.si/~klen/inudig/sova.html#si</string>
+    <string name="zolna">http://www.studenti.famnit.upr.si/~klen/inudig/zolna.html#si</string>
+    <string name="lastovka">http://www.studenti.famnit.upr.si/~klen/inudig/lastovka.html#si</string>
+    <string name="sokol">http://www.studenti.famnit.upr.si/~klen/inudig/sokol.html#si</string>
 </resources>

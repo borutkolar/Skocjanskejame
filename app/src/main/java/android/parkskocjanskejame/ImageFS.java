@@ -1,5 +1,6 @@
 package android.parkskocjanskejame;
 
+import android.content.pm.ActivityInfo;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,9 @@ public class ImageFS extends AppCompatActivity {
         setContentView(R.layout.imagefs);
 
         ImageView imageFS = (ImageView) findViewById(R.id.imageFS);
+
+        //enable application rotate:
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 
         Bundle extras = getIntent().getExtras();
         int image = extras.getInt("image");

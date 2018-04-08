@@ -38,7 +38,7 @@
     <string name="tabla3bpopup7">The white stork (Ciconia ciconia) nests in open cultural landscape with access to rivers, wetlands and floodplains</string>
     <string name="tabla3bpopup9">The black-headed gull (Larus ridibundus) inhabits standing water bodies near human settlements</string>
     <string name="tabla3a">100 years ago, this place was less covered by trees</string>
-    <string name="tabla3arazlaga">In the past, Kras was less covered by trees  because of grazing and regular mowing</string>
+    <string name="tabla3arazlaga">In the past, Kras was less covered by trees  because of grazing and regular mowing. Move slider form left to right.</string>
     <string name="tabla4popup0">The Eurasian eagle-owl (Bubo bubo) commonly uses high, dry and broken steep walls for daily resting and nesting</string>
     <string name="tabla4popup2">The common swift (Apus apus) nests in high buildings; bell towers, under roof tiles, towers</string>
     <string name="tabla4popup5">The common redshank (Tringa totanus) nests in wet meadows with low vegetation and on coastal salt marshes</string>
@@ -58,13 +58,19 @@
     <string name="tabla7razlaga">There is no light in the underground, therefore plant species cannot grow there.</string>
     <string name="tabla10">The fastest predator in the world is the cheetah.</string>
     <string name="tabla10razlaga">The fastest predator is the peregrine falcon (Falco peregrinus), that reaches 320 km/h when praying on other birds.</string>
-    <string name="tabla16">The wind is caused mainly by air pressure differences.</string>
-    <string name="tabla19">Is the river Reka the longest subterranean river in Slovenia?</string>
     <string name="navodila1">INSTRUCTIONS</string>
     <string name="navodila2">This application only works on <a href="http://www.park-skocjanske-jame.si/vsebina/izobrazevalni-programi/ucna-pot-skocjan">Educational Trail Škocjan</a>.\n\nSTEP 1\nTurn on data connection.\n\nSTEP 2\nLeave the application open at all times.\n\nSTEP 3\nPut the phone in your pocket and start your walk. When you get close to NFC badge, the phone will alert you by vibrating.\n\nSTEP 4\nFind the NFC badge and scan it by placing your phone over the badge.\n\nSTEP 5\nPlay with content to unlock rewards. You answer the questions by dragging your finger to YES or NO, or by selecting relevant pictures.\n\nDon\'t give up and continue to the end of the education trail. There are 8 titles to win!</string>
+    <string name="tabla16">The wind is caused mainly by air pressure differences.</string>
+    <string name="tabla19">Is the river Reka the longest subterranean river in Slovenia?</string>
+    <string name="tabla16razlaga">Hot air is raising because it has lower density then cold air cousing pressure differences in the atmosphere.</string>
+    <string name="tabla19razlaga">River Reka is the longest subterranean river in Sloveniji. The river flows 50 km on the surface after which it submerges into the Škocjan cave system.</string>
+
     <string name="napacenOdgovor">Wrong answer! You did not choose all pictures. (</string>
-    <string name="sova">http://www.studenti.famnit.upr.si/~klen/inudig/sova.html</string>
-    <string name="zolna">http://www.studenti.famnit.upr.si/~klen/inudig/zolna.html</string>
-    <string name="lastovka">http://www.studenti.famnit.upr.si/~klen/inudig/lastovka.html</string>
-    <string name="sokol">http://www.studenti.famnit.upr.si/~klen/inudig/sokol.html</string>
+
+    <string name="sova">http://www.studenti.famnit.upr.si/~klen/inudig/sova.html#en</string>
+    <string name="zolna">http://www.studenti.famnit.upr.si/~klen/inudig/zolna.html#en</string>
+    <string name="lastovka">http://www.studenti.famnit.upr.si/~klen/inudig/lastovka.html#en</string>
+    <string name="sokol">http://www.studenti.famnit.upr.si/~klen/inudig/sokol.html#en</string>
+
+
 </resources>

@@ -6,7 +6,9 @@
     <ImageView
         android:id="@+id/gridviewImage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/tabla3bimage8"/>
 
     <CheckBox
         android:id="@+id/gridviewCheckbox"
@@ -19,5 +21,15 @@
         android:layout_marginTop="10dp"
         android:scaleX="1.5"
         android:scaleY="1.5"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sokol Selec"
+        android:background="@color/buttonColor"
+        android:textColor="@color/buttonTextColor"
+        android:textSize="16dp"
+        android:layout_margin="0dp"
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

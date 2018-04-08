@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="mainColor">#f9eecc</color>
     <color name="textColor">#000000</color>
+    <color name="blacBG">#000000</color>
     <color name="buttonColor">#79a52c</color>
     <color name="buttonTextColor">#FFFFFF</color>
     <color name="popupBackground">#FFFFFF</color>

@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import static android.parkskocjanskejame.R.string.gumbZnova;
@@ -30,11 +31,11 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
     AlertDialog alert;
     LayoutInflater inflater;
     View view;
-    int images3a[] = {R.drawable.kras1, R.drawable.kras2};
-    String years[] = {"Leto: 2000", "Leto: 1800"};
+    //int images3a[] = {R.drawable.kras1, R.drawable.kras2};
+    //String years[] = {"Leto: 2000", "Leto: 1800"};
     boolean FSImage = true;
     Activity mActivity;
-
+    float alphaValue = 0f;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +69,7 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
         alert.show();*/
 
         final Dialog alertDialog=new Dialog(mActivity, R.style.AppTheme);
-        alertDialog.setContentView(R.layout.tabla3apopup);
+        alertDialog.setContentView(R.layout.tabla3apopup2);
         alertDialog.show();
 
 
@@ -78,16 +79,37 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
         final ImageView tabla = (ImageView) alertDialog.findViewById(R.id.imageTabla3a);
         tabla.setImageResource(R.drawable.kras1);
 
-        final TextView year = (TextView) alertDialog.findViewById(R.id.year);
-        year.setText(years[0]);
+        /*final TextView year = (TextView) alertDialog.findViewById(R.id.year);
+        year.setText(years[0]);*/
 
-        final Handler handler = new Handler();
+
+
+        final SeekBar seekBar = (SeekBar) alertDialog.findViewById(R.id.seekBar);
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                tabla.setAlpha((float)i/100.0f);
+                alphaValue = (float)i/100.0f;
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        /*final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             int i = 1;
             @Override
             public void run() {
                 tabla.setImageResource(images3a[i]);
-                year.setText(years[i]);
+                //year.setText(years[i]);
                 i--;
                 FSImage = !FSImage;
                 if (i < (0)) {
@@ -96,7 +118,7 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
                 handler.postDelayed(this, 2000);
             }
         };
-        handler.postDelayed(runnable, 2000);
+        handler.postDelayed(runnable, 2000);*/
 
 
         if (prav) {
@@ -126,8 +148,9 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
         tabla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(getApplicationContext(), ImageFS.class);
-                if (FSImage) {
+                if (alphaValue>0.5) {
                     intent.putExtra("image", 31);
                     startActivity(intent);
                 } else {

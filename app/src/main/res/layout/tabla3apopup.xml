@@ -29,35 +29,25 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <ImageView
+
+        <ImageView
         android:id="@+id/imageTabla3a"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView23"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:adjustViewBounds="true"
         android:src="@drawable/kras1"
         />
-
-    <android.parkskocjanskejame.utils.CustomTextView
-        android:id="@+id/year"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageTabla3a"
-        android:layout_centerHorizontal="true"
-        android:text=""
-        android:layout_marginTop="10dp"
-        android:textColor="@color/popupTextColor"
-        android:textSize="20dp" />
 
     <android.parkskocjanskejame.utils.CustomButton
         android:id="@+id/button2345"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/year"
+        android:layout_below="@+id/imageTabla3a"
         android:background="@drawable/custombutton"
         android:text="@string/zapri"
         android:textColor="@color/buttonTextColor"
@@ -66,17 +56,19 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"/>
 
-    <!--android.parkskocjanskejame.utils.CustomButton
-        android:id="@+id/button2345"
-        android:layout_margin="5dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/custombutton"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/buttonTextColor"
-        android:text="Button"
-        /-->
+
+
+        <!--android.parkskocjanskejame.utils.CustomButton
+            android:id="@+id/button2345"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/custombutton"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/buttonTextColor"
+            android:text="Button"
+            /-->
 
 
 </RelativeLayout>
