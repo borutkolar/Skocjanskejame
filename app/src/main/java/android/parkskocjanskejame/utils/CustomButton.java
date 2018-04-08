@@ -12,8 +12,12 @@ import android.util.AttributeSet;
 public class CustomButton extends AppCompatButton {
     public CustomButton(Context context, AttributeSet attrs) {
         super(context, attrs);
-        Typeface face = Typeface.createFromAsset(context.getAssets(), "fonts/Arvo-Regular.ttf");
+        Typeface face = Typeface.createFromAsset(context.getAssets(), "fonts/HELR45W.ttf");
         this.setTypeface(face);
+        //Helvetica
+        //Arial narrow
+        //Narrow
+        //this.setTypeface(Typeface.DEFAULT);
     }
 
 }

@@ -1,5 +1,7 @@
 package android.parkskocjanskejame;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Handler;
@@ -31,13 +33,13 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
     int images3a[] = {R.drawable.kras1, R.drawable.kras2};
     String years[] = {"Leto: 2000", "Leto: 1800"};
     boolean FSImage = true;
-
+    Activity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tabla3a);
-
+        mActivity = this;
         Constants.status++;
 
        /* //Setup the number font
@@ -57,21 +59,26 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
 
     @Override
     public void onSwipe(boolean prav) {
-        AlertDialog.Builder aD = new AlertDialog.Builder(Tabla3a.this);
+        /*AlertDialog.Builder aD = new AlertDialog.Builder(Tabla3a.this);
         LayoutInflater inf = getLayoutInflater();
         View v = inf.inflate(R.layout.tabla3apopup, null);
         aD.setView(v);
         alert = aD.create();
         alert.setCancelable(false);
-        alert.show();
+        alert.show();*/
 
-        TextView text = (TextView) v.findViewById(R.id.textView23);
+        final Dialog alertDialog=new Dialog(mActivity, R.style.AppTheme);
+        alertDialog.setContentView(R.layout.tabla3apopup);
+        alertDialog.show();
+
+
+        TextView text = (TextView) alertDialog.findViewById(R.id.textView23);
         text.setText(R.string.tabla3arazlaga);
 
-        final ImageView tabla = (ImageView) v.findViewById(R.id.imageTabla3a);
+        final ImageView tabla = (ImageView) alertDialog.findViewById(R.id.imageTabla3a);
         tabla.setImageResource(R.drawable.kras1);
 
-        final TextView year = (TextView) v.findViewById(R.id.year);
+        final TextView year = (TextView) alertDialog.findViewById(R.id.year);
         year.setText(years[0]);
 
         final Handler handler = new Handler();
@@ -94,7 +101,7 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
 
         if (prav) {
             //Continue button
-            Button continueButton = (Button) v.findViewById(R.id.button2345);
+            Button continueButton = (Button) alertDialog.findViewById(R.id.button2345);
             continueButton.setText(naprej);
             continueButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -106,7 +113,7 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
             });
         } else {
             //Retry button
-            Button continueButton = (Button) v.findViewById(R.id.button2345);
+            Button continueButton = (Button) alertDialog.findViewById(R.id.button2345);
             continueButton.setText(gumbZnova);
             continueButton.setOnClickListener(new View.OnClickListener() {
                 @Override

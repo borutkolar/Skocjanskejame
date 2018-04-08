@@ -164,7 +164,7 @@ public class RateView extends View{
                 falsePaint.setAlpha(alphaRange);
                 //MainActivity.imageViewDenied.setAlpha(alphaRange/255.0f);
                 canvas.drawText(napacno, touchX,touchY-140, falsePaint);
-                //canvas.drawText("Dislike", (float)(maxWidth*0.2), 150, dislikePaint);
+                //canvas.drawText("Dislike", (float)(maxWidth*0.4), 150, dislikePaint);
             }
             //Right side of screen
             else if(inTrueArea){

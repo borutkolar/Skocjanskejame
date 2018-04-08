@@ -74,6 +74,7 @@ public class Cestitamo extends AppCompatActivity {
                 cestitamoText1.setText(R.string.cestitamo26a);
                 cestitamoImage.setImageResource(R.drawable.znacka8);
                 cestitamoText2.setText(R.string.cestitamo26b);
+                cestitamoText3.setVisibility(View.VISIBLE);
                 cestitamoText3.setText(R.string.cestitamo26c);
                 Constants.alpha[7] = true;
                 break;

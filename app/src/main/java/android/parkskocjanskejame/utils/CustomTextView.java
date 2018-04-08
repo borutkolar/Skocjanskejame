@@ -12,8 +12,10 @@ import android.util.AttributeSet;
 public class CustomTextView extends AppCompatTextView {
     public CustomTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        Typeface face = Typeface.createFromAsset(context.getAssets(), "fonts/Arvo-Regular.ttf");
+        //Typeface face = Typeface.createFromAsset(context.getAssets(), "fonts/Arvo-Regular.ttf");
+        Typeface face = Typeface.createFromAsset(context.getAssets(), "fonts/HELR45W.ttf");
         this.setTypeface(face);
+        //this.setTypeface(Typeface.DEFAULT);
     }
 
 }

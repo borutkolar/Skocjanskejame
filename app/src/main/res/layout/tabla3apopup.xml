@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/popupBackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
     android:id="@+id/vprasanja"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,30 +31,42 @@
 
     <ImageView
         android:id="@+id/imageTabla3a"
-        android:scaleType="fitXY"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="50dp"
         android:layout_below="@+id/textView23"
-        android:layout_above="@+id/year"
-        android:layout_alignStart="@+id/button2345"/>
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/kras1"
+        />
 
     <android.parkskocjanskejame.utils.CustomTextView
         android:id="@+id/year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:textColor="@color/popupTextColor"
+        android:layout_below="@+id/imageTabla3a"
+        android:layout_centerHorizontal="true"
         android:text=""
-        android:textSize="15dp"
-        android:layout_above="@id/button2345"
-        android:layout_alignStart="@+id/button2345"/>
+        android:layout_marginTop="10dp"
+        android:textColor="@color/popupTextColor"
+        android:textSize="20dp" />
 
     <android.parkskocjanskejame.utils.CustomButton
+        android:id="@+id/button2345"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/year"
+        android:background="@drawable/custombutton"
+        android:text="@string/zapri"
+        android:textColor="@color/buttonTextColor"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <!--android.parkskocjanskejame.utils.CustomButton
         android:id="@+id/button2345"
         android:layout_margin="5dp"
         android:layout_width="match_parent"
@@ -55,9 +76,10 @@
         android:layout_centerHorizontal="true"
         android:textColor="@color/buttonTextColor"
         android:text="Button"
-        />
+        /-->
 
 
 </RelativeLayout>
-
+</ScrollView>
+</RelativeLayout>
 

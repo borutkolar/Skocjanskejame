@@ -2,40 +2,60 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
-    android:padding="10dp"
+    android:layout_margin="0dp"
+    android:padding="0dp"
     android:background="@color/popupBackground">
 
-    <android.parkskocjanskejame.utils.CustomTextView
-        android:id="@+id/helppopupText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/navodila1"
-        android:textColor="@color/textColor"
-        android:textSize="20dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <android.parkskocjanskejame.utils.CustomTextView
-        android:id="@+id/helppopupText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/navodila2"
-        android:textColor="@color/textColor"
-        android:textSize="16dp"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/helppopupText1"
-        android:layout_alignParentStart="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-    <android.parkskocjanskejame.utils.CustomButton
-        android:id="@+id/helpButton"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:background="@drawable/custombutton"
-        android:text="@string/zapri"
-        android:textColor="@color/buttonTextColor"
-        android:textSize="18dp"
-        android:layout_marginTop="23dp"
-        android:layout_below="@+id/helppopupText2"
-        android:layout_centerHorizontal="true" />
+            <android.parkskocjanskejame.utils.CustomTextView
+                android:id="@+id/helppopupText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:lineSpacingMultiplier="1.5"
+
+                android:text="@string/navodila1"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="35dp" />
+
+            <android.parkskocjanskejame.utils.CustomTextView
+                android:id="@+id/helppopupText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/helppopupText1"
+                android:layout_marginTop="11dp"
+                android:text="@string/navodila2"
+                android:textColor="@color/textColor"
+                android:textSize="18dp"
+                />
+
+            <android.parkskocjanskejame.utils.CustomButton
+                android:id="@+id/helpButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/helppopupText2"
+                android:layout_marginTop="23dp"
+                android:background="@drawable/custombutton"
+                android:text="@string/zapri"
+                android:textColor="@color/buttonTextColor"
+                android:textSize="20dp"
+
+                />
+        </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>

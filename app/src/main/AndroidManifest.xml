@@ -72,10 +72,11 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Reward"
-            android:theme="@style/fullscreen"/>
+            android:theme="@style/fullscreen" />
         <activity
             android:name=".ImageFS"
-            android:theme="@style/fullscreen"/>
+            android:theme="@style/fullscreen" />
+        <activity android:name=".MyWebView"></activity>
     </application>
 
 </manifest>
