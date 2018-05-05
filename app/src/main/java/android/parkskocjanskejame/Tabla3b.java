@@ -37,6 +37,14 @@ public class Tabla3b extends AppCompatActivity {
     public Boolean[] answers =
             {true, true, false, true, false, true, true, false, true, false};
 
+    public Integer[] imageTexts = {
+            R.string.tabla3bimage0Text, R.string.tabla3bimage1Text,
+            R.string.tabla3bimage2Text, R.string.tabla3bimage3Text,
+            R.string.tabla3bimage4Text, R.string.tabla3bimage5Text,
+            R.string.tabla3bimage6Text, R.string.tabla3bimage7Text,
+            R.string.tabla3bimage8Text, R.string.tabla3bimage9Text
+    };
+
     public static int counter = 0;
 
 
@@ -50,7 +58,7 @@ public class Tabla3b extends AppCompatActivity {
 
         ExpandableHeightGridView tabla3bGridView = (ExpandableHeightGridView) findViewById(R.id.tabla3bGrid);
         ImageAdapter tabla3bImageAdapter = new ImageAdapter
-                (Tabla3b.this, tabla3bImages, tabla3bSounds, tabla3bCheckboxSelection, answers, popupTexts, button, textView, counter);
+                (Tabla3b.this, tabla3bImages, tabla3bSounds, tabla3bCheckboxSelection, answers, popupTexts, imageTexts, button, textView, counter);
         tabla3bGridView.setAdapter(tabla3bImageAdapter);
         tabla3bGridView.setExpanded(true);
     }

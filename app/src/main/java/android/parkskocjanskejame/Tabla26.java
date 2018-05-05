@@ -18,10 +18,22 @@ public class Tabla26 extends AppCompatActivity {
                     R.drawable.tabla26image2, R.drawable.tabla26image3,
                     R.drawable.tabla26image4, R.drawable.tabla26image5,
                     R.drawable.tabla26image6};
-    public static Integer[] tabla26Sounds = {};
+    public static Integer[] tabla26Sounds = {
+            R.raw.tabla26sound0, null,
+            R.raw.tabla26sound2, R.raw.tabla26sound3,
+            null, null,
+            R.raw.tabla26sound6
+    };
     public Integer[] popupTexts =
             {null, R.string.tabla26popup1, null, null, R.string.tabla26popup4, R.string.tabla26popup5, null};
     public Boolean[] answers = {true, false, true, true, false, false, true};
+
+    public Integer[] imageTexts = {
+            R.string.tabla26image0Text, R.string.tabla26image1Text,
+            R.string.tabla26image2Text, R.string.tabla26image3Text,
+            R.string.tabla26image4Text, R.string.tabla26image5Text,
+            R.string.tabla26image6Text
+    };
 
     public static int counter = 0;
 
@@ -37,7 +49,7 @@ public class Tabla26 extends AppCompatActivity {
 
         ExpandableHeightGridView tabla26GridView = (ExpandableHeightGridView) findViewById(R.id.tabla26Grid);
         ImageAdapter tabla26ImageAdapter = new ImageAdapter
-                (Tabla26.this, tabla26Images, tabla26Sounds, tabla26CheckboxSelection, answers, popupTexts, button, textView, counter);
+                (Tabla26.this, tabla26Images, tabla26Sounds, tabla26CheckboxSelection, answers, popupTexts, imageTexts, button, textView, counter);
         tabla26GridView.setAdapter(tabla26ImageAdapter);
         tabla26GridView.setExpanded(true);
     }

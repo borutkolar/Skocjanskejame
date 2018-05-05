@@ -27,6 +27,7 @@ public class ImageAdapter extends BaseAdapter {
     public static boolean[] checkboxSelection;
     public static Boolean[] answers;
     public static Integer[] popupTexts;
+    public static Integer[] imageTexts;
 
     public static int counter;
 
@@ -36,7 +37,7 @@ public class ImageAdapter extends BaseAdapter {
     AlertDialog alert;
     MediaPlayer mediaPlayer;
 
-    public ImageAdapter (Context c, Integer[] images, Integer[] sounds, boolean[] checkboxSelection, Boolean[] answers, Integer[] popupTexts, Button button, TextView textView, int counter) {
+    public ImageAdapter (Context c, Integer[] images, Integer[] sounds, boolean[] checkboxSelection, Boolean[] answers, Integer[] popupTexts, Integer[] imageTexts, Button button, TextView textView, int counter) {
         this.context = c;
         this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.images = images;
@@ -44,6 +45,7 @@ public class ImageAdapter extends BaseAdapter {
         this.checkboxSelection = checkboxSelection;
         this.answers = answers;
         this.popupTexts = popupTexts;
+        this.imageTexts = imageTexts;
         this.button = button;
         this.textView = textView;
         this.counter = counter;
@@ -68,14 +70,19 @@ public class ImageAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             viewHolder.imageView = (ImageView) convertView.findViewById(R.id.gridviewImage);
             viewHolder.checkBox = (CheckBox) convertView.findViewById(R.id.gridviewCheckbox);
+            viewHolder.textView = (TextView) convertView.findViewById(R.id.gridviewText);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
         viewHolder.checkBox.setId(position);
-        viewHolder.imageView.setId(position);
+        viewHolder.checkBox.setClickable(false);
 
+        viewHolder.textView.setId(position);
+        viewHolder.textView.setText(imageTexts[position]);
+
+        viewHolder.imageView.setId(position);
         viewHolder.imageView.setImageResource(images[position]);
         viewHolder.imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         viewHolder.imageView.setAdjustViewBounds(true);
@@ -95,10 +102,9 @@ public class ImageAdapter extends BaseAdapter {
                     } else {
                         counter++;
                         textView.setText(Integer.toString(counter));
-                        createSound(idImage);
                         viewHolder.checkBox.setChecked(true);
                         checkboxSelection[idCheckbox] = true;
-                        showPopup(idImage);
+                        createSound(idImage);
                     }
                 } else {
                     createSound(idImage);
@@ -132,6 +138,7 @@ public class ImageAdapter extends BaseAdapter {
     class ViewHolder {
         ImageView imageView;
         CheckBox checkBox;
+        TextView textView;
     }
 
     private void showPopup(int imageID) {
@@ -140,12 +147,9 @@ public class ImageAdapter extends BaseAdapter {
         alertDialog.setView(v);
         alert = alertDialog.create();
         TextView popupText = (TextView) v.findViewById(R.id.tablapopupText);
-        if (popupTexts[imageID] != null) {
-            if (answers[imageID] == false) {
-                popupText.setText(popupTexts[imageID]);
-                alert.show();
-            }
-        }
+        popupText.setText(popupTexts[imageID]);
+        alert.show();
+
         Button popupButton = (Button) v.findViewById(R.id.tablapopupButton);
         popupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,19 +160,12 @@ public class ImageAdapter extends BaseAdapter {
     }
 
     private void createSound(int imageID) {
-        if (sounds.length > 0) {
-            if (answers[imageID] == true) {
-                mediaPlayer = MediaPlayer.create(context, sounds[imageID]);
-                mediaPlayer.start();
-            } else {
-                mediaPlayer = MediaPlayer.create(context, R.raw.beep);
-                mediaPlayer.start();
-            }
+        if (answers[imageID] == true) {
+            mediaPlayer = MediaPlayer.create(context, sounds[imageID]);
+            mediaPlayer.start();
         } else {
-            if (answers[imageID] == false) {
-                mediaPlayer = MediaPlayer.create(context, R.raw.beep);
-                mediaPlayer.start();
-            }
+            mediaPlayer = MediaPlayer.create(context, R.raw.beep);
+            mediaPlayer.start();
         }
     }
 

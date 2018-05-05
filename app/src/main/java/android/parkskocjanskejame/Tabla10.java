@@ -1,5 +1,6 @@
 package android.parkskocjanskejame;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Handler;
@@ -40,6 +41,7 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
         setContentView(R.layout.tabla10);
 
         Constants.status++;
+        Constants.reward += 2;
 
        /* //Setup the number font
         font = Typeface.createFromAsset(getAssets(), "dinFont.ttf");
@@ -58,6 +60,7 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
 
     @Override
     public void onSwipe(boolean prav) {
+        /*
         AlertDialog.Builder aD = new AlertDialog.Builder(Tabla10.this);
         LayoutInflater inf = getLayoutInflater();
         View v = inf.inflate(R.layout.tabla3apopup, null);
@@ -65,26 +68,38 @@ public class Tabla10 extends AppCompatActivity implements RateViewListener {
         alert = aD.create();
         alert.setCancelable(false);
         alert.show();
+        */
 
-        TextView text = (TextView) v.findViewById(R.id.textView23);
+        final Dialog alertDialog = new Dialog(this, R.style.AppTheme);
+        alertDialog.setContentView(R.layout.tabla3apopup2);
+        alertDialog.setCancelable(false);
+        alertDialog.show();
+
+        TextView text = (TextView) alertDialog.findViewById(R.id.textView23);
         text.setText(R.string.tabla10razlaga);
-
-        final ImageView tabla = (ImageView) v.findViewById(R.id.imageTabla3a);
+        final ImageView tabla = (ImageView) alertDialog.findViewById(R.id.imageTabla3a2);
         tabla.setImageResource(R.drawable.tabla10slika2);
+
+        /*
+        TextView text = (TextView) alertDialog.findViewById(R.id.textView23);
+        text.setText(R.string.tabla10razlaga);
+        final ImageView tabla = (ImageView) alertDialog.findViewById(R.id.imageTabla3a2);
+        tabla.setImageResource(R.drawable.tabla10slika2);
+        */
 
         if (prav) {
             //Retry button
-            Button continueButton = (Button) v.findViewById(R.id.button2345);
+            Button continueButton = (Button) alertDialog.findViewById(R.id.button2345);
             continueButton.setText(gumbZnova);
             continueButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    alert.cancel();
+                    alertDialog.cancel();
                 }
             });
         } else {
             //Continue button
-            Button continueButton = (Button) v.findViewById(R.id.button2345);
+            Button continueButton = (Button) alertDialog.findViewById(R.id.button2345);
             continueButton.setText(naprej);
             continueButton.setOnClickListener(new View.OnClickListener() {
                 @Override

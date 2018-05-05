@@ -10,6 +10,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.parkskocjanskejame.R;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -111,16 +112,17 @@ public class GPSTracker extends Service implements LocationListener {
         return location;
     }
 
+    public float getDistance(double currentLatitude, double currentLongitude, double tagLatitude, double tagLongitude) {
+        float[] results = new float[1];
+        Location.distanceBetween(currentLatitude, currentLongitude, tagLatitude, tagLongitude, results);
+        return results[0];
+    }
+
     /**
      * Stop using GPS listener
      * Calling this function will stop using GPS in your app
      * */
 
-    public void stopUsingGPS(){
-        if(locationManager != null){
-            locationManager.removeUpdates(GPSTracker.this);
-        }
-    }
 
     /**
      * Function to get latitude
@@ -170,13 +172,13 @@ public class GPSTracker extends Service implements LocationListener {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
 
         // Setting Dialog Title
-        alertDialog.setTitle("GPS is settings");
+        alertDialog.setTitle(R.string.gpsTitle);
 
         // Setting Dialog Message
-        alertDialog.setMessage("GPS is not enabled. Do you want to go to settings menu?");
+        alertDialog.setMessage(R.string.gpsMessage);
 
         // On pressing Settings button
-        alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+        alertDialog.setPositiveButton(R.string.gpsSettings, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog,int which) {
                 Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 mContext.startActivity(intent);
@@ -184,7 +186,7 @@ public class GPSTracker extends Service implements LocationListener {
         });
 
         // on pressing cancel button
-        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        alertDialog.setNegativeButton(R.string.gpsCancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
             }

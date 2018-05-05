@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -27,9 +28,6 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
 
     //Client side variables
     RateView rateView;
-    AlertDialog.Builder alertDialog;
-    AlertDialog alert;
-    LayoutInflater inflater;
     View view;
     //int images3a[] = {R.drawable.kras1, R.drawable.kras2};
     //String years[] = {"Leto: 2000", "Leto: 1800"};
@@ -42,6 +40,7 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
         setContentView(R.layout.tabla3a);
         mActivity = this;
         Constants.status++;
+        Constants.reward += 2;
 
        /* //Setup the number font
         font = Typeface.createFromAsset(getAssets(), "dinFont.ttf");
@@ -68,8 +67,9 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
         alert.setCancelable(false);
         alert.show();*/
 
-        final Dialog alertDialog=new Dialog(mActivity, R.style.AppTheme);
+        final Dialog alertDialog = new Dialog(mActivity, R.style.AppTheme);
         alertDialog.setContentView(R.layout.tabla3apopup2);
+        alertDialog.setCancelable(false);
         alertDialog.show();
 
 
@@ -82,9 +82,8 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
         /*final TextView year = (TextView) alertDialog.findViewById(R.id.year);
         year.setText(years[0]);*/
 
-
-
         final SeekBar seekBar = (SeekBar) alertDialog.findViewById(R.id.seekBar);
+        seekBar.setVisibility(View.VISIBLE);
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -102,6 +101,9 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
 
             }
         });
+
+        RelativeLayout rl = (RelativeLayout) alertDialog.findViewById(R.id.years);
+        rl.setVisibility(View.VISIBLE);
 
         /*final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
@@ -140,7 +142,7 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
             continueButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    alert.cancel();
+                    alertDialog.cancel();
                 }
             });
         }

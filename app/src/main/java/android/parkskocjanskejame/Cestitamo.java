@@ -39,6 +39,8 @@ public class Cestitamo extends AppCompatActivity {
                 cestitamoImage.setImageResource(R.drawable.znacka2);
                 cestitamoText2.setText(R.string.cestitamo3b);
                 Constants.alpha[1] = true;
+                Constants.alpha[8] = true;
+                Constants.alpha[9] = true;
                 break;
             case 3:
                 cestitamoText1.setText(R.string.cestitamo4a);
@@ -57,6 +59,8 @@ public class Cestitamo extends AppCompatActivity {
                 cestitamoImage.setImageResource(R.drawable.znacka5);
                 cestitamoText2.setText(R.string.cestitamo10b);
                 Constants.alpha[4] = true;
+                Constants.alpha[10] = true;
+                Constants.alpha[11] = true;
                 break;
             case 6:
                 cestitamoText1.setText(R.string.cestitamo16a);

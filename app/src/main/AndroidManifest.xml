@@ -4,9 +4,12 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.NFC" />
+
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.NFC" />
 
     <uses-feature
         android:name="android.hardware.nfc"
@@ -39,13 +42,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Tabla3b"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Cestitamo"
             android:screenOrientation="portrait" />
@@ -71,12 +68,10 @@
             android:name=".Tabla26"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".Reward"
-            android:theme="@style/fullscreen" />
-        <activity
             android:name=".ImageFS"
             android:theme="@style/fullscreen" />
-        <activity android:name=".MyWebView"></activity>
+        <activity
+            android:name=".MyWebView"/>
     </application>
 
 </manifest>

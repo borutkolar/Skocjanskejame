@@ -22,6 +22,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class Status extends AppCompatActivity {
     GPSTracker gpsTracker;
     double latitude, longitude;
@@ -60,50 +62,29 @@ public class Status extends AppCompatActivity {
 
         final ImageView[] imageViews = {znacka1, znacka2, znacka3, znacka4, znacka5, znacka6, znacka7, znacka8, znacka9, znacka10, znacka11, znacka12};
 
-//ODKLENJENE 3D VSEBINE
-Constants.alpha[8]=true;
-Constants.alpha[9]=true;
-Constants.alpha[10]=true;
-Constants.alpha[11]=true;
         for (int i = 0; i < Constants.alpha.length; i++) {
-
             if (Constants.alpha[i] == true) {
                 imageViews[i].setAlpha(1f);
+                statusPopup(imageViews[i], i);
             }
         }
 
-        statusPopup(znacka1, 0);
-        statusPopup(znacka2, 1);
-        statusPopup(znacka3, 2);
-        statusPopup(znacka4, 3);
-        statusPopup(znacka5, 4);
-        statusPopup(znacka6, 5);
-        statusPopup(znacka7, 6);
-
-        statusPopup(znacka9, 8);
-        statusPopup(znacka10, 9);
-        statusPopup(znacka11, 10);
-        statusPopup(znacka12, 11);
-
         TextView statusText2 = (TextView) findViewById(R.id.statusText2);
         statusText2.setText(Integer.toString(Constants.status));
-        statusText2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), NFCScan.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
-        ImageView reward1 = (ImageView) findViewById(R.id.znacka9);
-        reward1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Reward.class);
-                startActivity(intent);
-            }
-        });
+        if (Constants.status < 8) {
+            statusText2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), NFCScan.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+        }
+
+        TextView statusText5 = (TextView) findViewById(R.id.statusText5);
+        statusText5.setText(Integer.toString(Constants.reward));
 
         ImageView help = (ImageView) findViewById(R.id.help);
         help.setOnClickListener(new View.OnClickListener() {
@@ -135,97 +116,95 @@ Constants.alpha[11]=true;
     }
 
     public void statusPopup(ImageView image, final int id) {
-        if (Constants.alpha[id] == true) {
-            image.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    /*AlertDialog.Builder alertDialog = new AlertDialog.Builder(Status.this);
-                    LayoutInflater layoutInflater = (LayoutInflater) Status.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                    View view = layoutInflater.inflate(R.layout.statuspopup, null);*/
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*AlertDialog.Builder alertDialog = new AlertDialog.Builder(Status.this);
+                LayoutInflater layoutInflater = (LayoutInflater) Status.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View view = layoutInflater.inflate(R.layout.statuspopup, null);*/
 
-                    TextView naziv = null;
-                    if(id<8) {
-                        final Dialog alertDialog = new Dialog(statusActivity, R.style.AppTheme);
-                        alertDialog.setContentView(R.layout.statuspopup);
-                        alertDialog.show();
+                TextView naziv = null;
+                if(id<8) {
+                    final Dialog alertDialog = new Dialog(statusActivity, R.style.AppTheme);
+                    alertDialog.setContentView(R.layout.statuspopup);
+                    alertDialog.show();
 
-                        ImageView imageView = (ImageView) alertDialog.findViewById(R.id.statuspopupImage);
-                        imageView.setImageResource(images[id]);
-
-
-                        Button helpButton = (Button) alertDialog.findViewById(R.id.helpButton);
-
-                        /*TextView t2 = (TextView) alertDialog.findViewById(R.id.helppopupText2);
-                        t2.setMovementMethod(LinkMovementMethod.getInstance());*/
-
-                        helpButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                alertDialog.cancel();
-                            }
-                        });
-                        naziv = (TextView) alertDialog.findViewById(R.id.naziv);
-                    }
-
-                    Intent intent;
-                    switch (id) {
-                        case 0:
-                            naziv.setText(R.string.cestitamo1b);
-                            break;
-                        case 1:
-                            naziv.setText(R.string.cestitamo3b);
-                            break;
-                        case 2:
-                            naziv.setText(R.string.cestitamo4b);
-                            break;
-                        case 3:
-                            naziv.setText(R.string.cestitamo7b);
-                            break;
-                        case 4:
-                            naziv.setText(R.string.cestitamo10b);
-                            break;
-                        case 5:
-                            naziv.setText(R.string.cestitamo16b);
-                            break;
-                        case 6:
-                            naziv.setText(R.string.cestitamo19b);
-                            break;
-                        case 7:
-                            naziv.setText(R.string.cestitamo26b);
-                            break;
-                        case 8:
-                            intent = new Intent(statusActivity, MyWebView.class);
-                            intent.putExtra("url", getString(R.string.sova));
-                            startActivity(intent);
-                            break;
-                        case 9:
-                            intent = new Intent(statusActivity, MyWebView.class);
-                            intent.putExtra("url", getString(R.string.zolna));
-                            startActivity(intent);
-                            break;
-                        case 10:
-                            intent = new Intent(statusActivity, MyWebView.class);
-                            intent.putExtra("url", getString(R.string.lastovka));
-                            startActivity(intent);
-                            break;
-                        case 11:
-                            intent = new Intent(statusActivity, MyWebView.class);
-                            intent.putExtra("url", getString(R.string.sokol));
-                            startActivity(intent);
-                            break;
+                    ImageView imageView = (ImageView) alertDialog.findViewById(R.id.statuspopupImage);
+                    imageView.setImageResource(images[id]);
 
 
-                    }
-                    /*ImageView close = (ImageView) alertDialog.findViewById(R.id.helpButton);
-                    close.setOnClickListener(new View.OnClickListener() {
+                    Button helpButton = (Button) alertDialog.findViewById(R.id.helpButton);
+
+                    /*TextView t2 = (TextView) alertDialog.findViewById(R.id.helppopupText2);
+                    t2.setMovementMethod(LinkMovementMethod.getInstance());*/
+
+                    helpButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            alert.cancel();
+                            alertDialog.cancel();
                         }
-                    });*/
+                    });
+                    naziv = (TextView) alertDialog.findViewById(R.id.naziv);
                 }
-            });
-        }
+
+                Intent intent;
+                switch (id) {
+                    case 0:
+                        naziv.setText(R.string.cestitamo1b);
+                        break;
+                    case 1:
+                        naziv.setText(R.string.cestitamo3b);
+                        break;
+                    case 2:
+                        naziv.setText(R.string.cestitamo4b);
+                        break;
+                    case 3:
+                        naziv.setText(R.string.cestitamo7b);
+                        break;
+                    case 4:
+                        naziv.setText(R.string.cestitamo10b);
+                        break;
+                    case 5:
+                        naziv.setText(R.string.cestitamo16b);
+                        break;
+                    case 6:
+                        naziv.setText(R.string.cestitamo19b);
+                        break;
+                    case 7:
+                        naziv.setText(R.string.cestitamo26b);
+                        break;
+                    case 8:
+                        intent = new Intent(statusActivity, MyWebView.class);
+                        intent.putExtra("url", getString(R.string.sova));
+                        startActivity(intent);
+                        break;
+                    case 9:
+                        intent = new Intent(statusActivity, MyWebView.class);
+                        intent.putExtra("url", getString(R.string.zolna));
+                        startActivity(intent);
+                        break;
+                    case 10:
+                        intent = new Intent(statusActivity, MyWebView.class);
+                        intent.putExtra("url", getString(R.string.lastovka));
+                        startActivity(intent);
+                        break;
+                    case 11:
+                        intent = new Intent(statusActivity, MyWebView.class);
+                        intent.putExtra("url", getString(R.string.sokol));
+                        startActivity(intent);
+                        break;
+
+
+                }
+                /*ImageView close = (ImageView) alertDialog.findViewById(R.id.helpButton);
+                close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alert.cancel();
+                    }
+                });*/
+            }
+        });
     }
 
     @Override

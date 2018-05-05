@@ -24,11 +24,8 @@
     <string name="cestitamo26b">Hiker of the education trail</string>
     <string name="cestitamo26c">You can pick up your badge at the information desk of Škocjan Caves Park.</string>
     <string name="naprej">Next</string>
-    <string name="NFC">NFC is not turned on</string>
-
     <string name="status">Badge Collection</string>
     <string name="nagrada">Animal Collection</string>
-
     <string name="status2">Put away your phone. Near the next badge, your phone will alert you</string>
     <string name="tabla3b">Tick/Mark the pictures of birds living on precipitous walls</string>
     <string name="odgovori">Answer</string>
@@ -63,14 +60,47 @@
     <string name="tabla16">The wind is caused mainly by air pressure differences.</string>
     <string name="tabla19">Is the river Reka the longest subterranean river in Slovenia?</string>
     <string name="tabla16razlaga">Hot air is raising because it has lower density then cold air cousing pressure differences in the atmosphere.</string>
-    <string name="tabla19razlaga">River Reka is the longest subterranean river in Sloveniji. The river flows 50 km on the surface after which it submerges into the Škocjan cave system.</string>
+    <string name="tabla19razlaga">River Reka is the longest subterranean river in Slovenia. The river flows 50 km on the surface after which it submerges into the Škocjan cave system.</string>
 
     <string name="napacenOdgovor">Wrong answer! You did not choose all pictures. (</string>
 
-    <string name="sova">http://www.studenti.famnit.upr.si/~klen/inudig/sova.html#en</string>
-    <string name="zolna">http://www.studenti.famnit.upr.si/~klen/inudig/zolna.html#en</string>
-    <string name="lastovka">http://www.studenti.famnit.upr.si/~klen/inudig/lastovka.html#en</string>
-    <string name="sokol">http://www.studenti.famnit.upr.si/~klen/inudig/sokol.html#en</string>
+    <string name="sova">http://www.studenti.famnit.upr.si/~klen/inudig/sova.html</string>
+    <string name="zolna">http://www.studenti.famnit.upr.si/~klen/inudig/zolna.html</string>
+    <string name="lastovka">http://www.studenti.famnit.upr.si/~klen/inudig/lastovka.html</string>
+    <string name="sokol">http://www.studenti.famnit.upr.si/~klen/inudig/sokol.html</string>
 
+    <string name="tabla3bimage0Text">Raven</string>
+    <string name="tabla3bimage1Text">Alpine swift</string>
+    <string name="tabla3bimage2Text">Cuckoo</string>
+    <string name="tabla3bimage3Text">Rock bunting</string>
+    <string name="tabla3bimage4Text">Robin</string>
+    <string name="tabla3bimage5Text">Eagle owl</string>
+    <string name="tabla3bimage6Text">Rock dove</string>
+    <string name="tabla3bimage7Text">White stork</string>
+    <string name="tabla3bimage8Text">Peregrine falcon</string>
+    <string name="tabla3bimage9Text">Black-headed gull</string>
+    <string name="tabla4image0Text">Eagle owl</string>
+    <string name="tabla4image1Text">Green woodpecker</string>
+    <string name="tabla4image2Text">Common swift</string>
+    <string name="tabla4image3Text">Grey-headed woodpecker</string>
+    <string name="tabla4image4Text">Lesser spotted woodpecker</string>
+    <string name="tabla4image5Text">Redshank</string>
+    <string name="tabla4image6Text">Great spotted woodpecker</string>
+    <string name="tabla4image7Text">Great spotted woodpecker</string>
+    <string name="tabla4image8Text">Black woodpecker</string>
+    <string name="tabla26image0Text">Smooth newt</string>
+    <string name="tabla26image1Text">Goldfish</string>
+    <string name="tabla26image2Text">Toad</string>
+    <string name="tabla26image3Text">Grass snake</string>
+    <string name="tabla26image4Text">Red-eared slider</string>
+    <string name="tabla26image5Text">Building materials</string>
+    <string name="tabla26image6Text">Cattail</string>
 
+    <string name="gpsTitle">GPS settings</string>
+    <string name="gpsMessage">GPS is not enabled. Do you want to go to settings menu?</string>
+    <string name="gpsSettings">Settings</string>
+    <string name="gpsCancel">Cancel</string>
+
+    <string name="nfcTitle">NFC settings</string>
+    <string name="nfcMessage">NFC is not enabled. Do you want to go to settings menu?</string>
 </resources>

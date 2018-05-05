@@ -19,11 +19,25 @@ public class Tabla4 extends AppCompatActivity {
                     R.drawable.tabla4image4, R.drawable.tabla4image5,
                     R.drawable.tabla4image6, R.drawable.tabla4image7,
                     R.drawable.tabla4image8};
-    public static Integer[] tabla26Sounds = {};
+    public static Integer[] tabla4Sounds = {
+            null, R.raw.tabla4sound1,
+            null, R.raw.tabla4sound3,
+            R.raw.tabla4sound4, null,
+            R.raw.tabla4sound67, R.raw.tabla4sound67,
+            R.raw.tabla4sound8
+    };
     public Integer[] popupTexts =
             {R.string.tabla4popup0, null, R.string.tabla4popup2, null, null, R.string.tabla4popup5, null, null, null};
     public Boolean[] answers =
             {false, true, false, true, true, false, true, true, true};
+
+    public Integer[] imageTexts = {
+            R.string.tabla4image0Text, R.string.tabla4image1Text,
+            R.string.tabla4image2Text, R.string.tabla4image3Text,
+            R.string.tabla4image4Text, R.string.tabla4image5Text,
+            R.string.tabla4image6Text, R.string.tabla4image7Text,
+            R.string.tabla4image8Text
+    };
 
     public static int counter = 0;
 
@@ -39,7 +53,7 @@ public class Tabla4 extends AppCompatActivity {
 
         ExpandableHeightGridView tabla4GridView = (ExpandableHeightGridView) findViewById(R.id.tabla4Grid);
         ImageAdapter tabla4ImageAdapter = new ImageAdapter
-                (Tabla4.this, tabla4Images, tabla26Sounds, tabla4CheckboxSelection, answers, popupTexts, button, textView, counter);
+                (Tabla4.this, tabla4Images, tabla4Sounds, tabla4CheckboxSelection, answers, popupTexts, imageTexts, button, textView, counter);
         tabla4GridView.setAdapter(tabla4ImageAdapter);
         tabla4GridView.setExpanded(true);
     }

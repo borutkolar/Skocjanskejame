@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Park Skocjanske jame</string>
+    <string name="app_name">Škocjan</string>
     <string name="homeScreen">Najdi in poberi NFC značke</string>
     <string name="zacni">Začni</string>
     <string name="iskanjeLokacije">Iskanje GPS signala</string>
@@ -24,13 +24,12 @@
     <string name="cestitamo26b">Popotnik/popotnica učne poti</string>
     <string name="cestitamo26c">Svojo značko lahko prevzamete na informacijski točki parka Škocjanske jame.</string>
     <string name="naprej">Naprej</string>
-    <string name="NFC">NFC ni vklopljen!</string>
     <string name="status">Zbirka značk</string>
     <string name="nagrada">Zbirka  živali</string>
     <string name="status2">Pospravite telefon. V bližini naslednje značke vas bo telefon opozoril</string>
     <string name="tabla3b">Odkljukaj slike ptic, ki živijo na prepadnih stenah</string>
     <string name="odgovori">Odgovori</string>
-    <string name="tabla4">Odkljukaj živali, ki uporabljajo dupla kot njihova prebivališča ali prehanjevališlča</string>
+    <string name="tabla4">Odkljukaj živali, ki uporabljajo dupla kot njihova prebivališča ali prehranjevališča</string>
     <string name="tabla3bpopup2">Kukavica (Cuculus canorus) živi v iglastih in listnatih gozdov, v kulturni krajini z redko posejanim drevjem in mejicami ter mokrišč.</string>
     <string name="tabla3bpopup4">Taščica (Erithacus rubecula) si gnezdo splete med gostimi koreninami v gozdu.</string>
     <string name="tabla3bpopup7">Bela štorklja (Ciconia ciconia) gnezdi v odprti kulturni krajini z dostopom do rek, močvirij in poplavnih ravnic.</string>
@@ -62,10 +61,45 @@
     <string name="tabla19">Ali je reka Reka je najdaljša ponikalnica v Sloveniji?</string>
     <string name="tabla19razlaga">Reka Reka je najdaljša ponikalnica v Sloveniji, ki po 50 km površinskega toka ponikne v Škocjanskih jamah.</string>
     <string name="tabla16razlaga">Topel zrak se dviga, ker ima manjšo gostoto od hladnega, pri čemer prihaja do tlačnih razlik v ozračju.</string>
-    <string name="napacenOdgovor">Napačen odgovor! Izbral si premalo slik (</string>
+    <string name="napacenOdgovor">Napačen odgovor! Nisi zbral vseh slik. </string>
 
-    <string name="sova">http://www.studenti.famnit.upr.si/~klen/inudig/sova.html#si</string>
-    <string name="zolna">http://www.studenti.famnit.upr.si/~klen/inudig/zolna.html#si</string>
-    <string name="lastovka">http://www.studenti.famnit.upr.si/~klen/inudig/lastovka.html#si</string>
-    <string name="sokol">http://www.studenti.famnit.upr.si/~klen/inudig/sokol.html#si</string>
+    <string name="sova">http://www.studenti.famnit.upr.si/~klen/inudig/sova.html</string>
+    <string name="zolna">http://www.studenti.famnit.upr.si/~klen/inudig/zolna.html</string>
+    <string name="lastovka">http://www.studenti.famnit.upr.si/~klen/inudig/lastovka.html</string>
+    <string name="sokol">http://www.studenti.famnit.upr.si/~klen/inudig/sokol.html</string>
+
+    <string name="tabla3bimage0Text">Krokar</string>
+    <string name="tabla3bimage1Text">Planinski hudournik</string>
+    <string name="tabla3bimage2Text">Kukavica</string>
+    <string name="tabla3bimage3Text">Skalni strnad</string>
+    <string name="tabla3bimage4Text">Taščica</string>
+    <string name="tabla3bimage5Text">Velika uharica</string>
+    <string name="tabla3bimage6Text">Skalni golob</string>
+    <string name="tabla3bimage7Text">Bela štorklja</string>
+    <string name="tabla3bimage8Text">Sokol selec</string>
+    <string name="tabla3bimage9Text">Rečni galeb</string>
+    <string name="tabla4image0Text">Velika uharica</string>
+    <string name="tabla4image1Text">Zelena žolna</string>
+    <string name="tabla4image2Text">Navadni hudournik</string>
+    <string name="tabla4image3Text">Siva žolna</string>
+    <string name="tabla4image4Text">Mali detel</string>
+    <string name="tabla4image5Text">Rdečenogi martinec</string>
+    <string name="tabla4image6Text">Veliki detel</string>
+    <string name="tabla4image7Text">Veliki detel</string>
+    <string name="tabla4image8Text">Črna žolna</string>
+    <string name="tabla26image0Text">Navadni pupek</string>
+    <string name="tabla26image1Text">Zlata ribica</string>
+    <string name="tabla26image2Text">Urh</string>
+    <string name="tabla26image3Text">Belouška</string>
+    <string name="tabla26image4Text">Želva rdečevratka</string>
+    <string name="tabla26image5Text">Gradbeni material</string>
+    <string name="tabla26image6Text">Rogoz</string>
+
+    <string name="gpsTitle">GPS nastavitve</string>
+    <string name="gpsMessage">GPS lokacija ni vklopljena. Ali želite obiskati nastavitve, da jo vklopite?</string>
+    <string name="gpsSettings">Nastavitve</string>
+    <string name="gpsCancel">Prekliči</string>
+
+    <string name="nfcTitle">NFC nastavitve</string>
+    <string name="nfcMessage">NFC ni vklopljen. Ali želite obiskati nastavitve, da ga vklopite?</string>
 </resources>
