@@ -33,10 +33,28 @@ public class NFCScan extends AppCompatActivity {
 
     int[] images = {R.drawable.nfcboard1, R.drawable.nfcboard2};
 
+    public static int VRScene = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nfcscan);
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean firstVRScene = prefs.getBoolean("FirstVRScene", false);
+        boolean secondVRScene = prefs.getBoolean("SecondVRScene", false);
+        if (firstVRScene || secondVRScene) {
+            int status = prefs.getInt("Status", 0);
+            int badges = prefs.getInt("Badges", 0);
+            int reward = prefs.getInt("Reward", 0);
+            boolean[] alpha = Functions.getBooleanArray(prefs);
+            Constants.status = status;
+            Constants.badges = badges;
+            Constants.reward = reward;
+            Constants.alpha = alpha;
+            Intent intent = new Intent(this, Status.class);
+            startActivity(intent);
+        }
 
         /*
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -90,11 +108,7 @@ public class NFCScan extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = prefs.edit();
-        int status = prefs.getInt("Status", 0);
-        Log.d("TAG", "Status: " + status);
 
-        if (status == 2) Constants.status = 2;
-        if (status == 3) Constants.status = 3;
         /*Parcelable[] rawMessages = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
         NdefMessage[] messages = new NdefMessage[rawMessages.length];
         for (int i = 0; i < rawMessages.length; i++) {
@@ -110,14 +124,28 @@ public class NFCScan extends AppCompatActivity {
                 startActivity(intent0);
                 break;
             case 1:
-                editor.putInt("Status", 2);
+                editor.putBoolean("FirstVRScene", true);
+                editor.putInt("Status", Constants.status + 1);
+                editor.putInt("Badges", Constants.badges);
+                editor.putInt("Reward", Constants.reward + 2);
                 editor.apply();
+                Constants.alpha[8] = true;
+                Constants.alpha[9] = true;
+                Functions.putBooleanArray(Constants.alpha, editor);
+                VRScene = 1;
                 Intent intent1 = new Intent(this, UnityPlayerActivity.class);
                 startActivity(intent1);
                 break;
             case 2:
-                editor.putInt("Status", 3);
+                editor.putBoolean("SecondVRScene", true);
+                editor.putInt("Status", Constants.status + 1);
+                editor.putInt("Badges", Constants.badges);
+                editor.putInt("Reward", Constants.reward + 2);
                 editor.apply();
+                Constants.alpha[10] = true;
+                Constants.alpha[11] = true;
+                Functions.putBooleanArray(Constants.alpha, editor);
+                VRScene = 2;
                 Intent intent2 = new Intent(this, UnityPlayerActivity.class);
                 startActivity(intent2);
                 break;
@@ -126,20 +154,28 @@ public class NFCScan extends AppCompatActivity {
                 startActivity(intent3);
                 break;
             case 4:
-                Intent intent4 = new Intent(this, Tabla10.class);
+                Intent intent4 = new Intent(this, Tabla4.class);
                 startActivity(intent4);
                 break;
             case 5:
-                Intent intent5 = new Intent(this, Tabla16.class);
+                Intent intent5 = new Intent(this, Tabla7.class);
                 startActivity(intent5);
                 break;
             case 6:
-                Intent intent6 = new Intent(this, Tabla19.class);
+                Intent intent6 = new Intent(this, Tabla10.class);
                 startActivity(intent6);
                 break;
             case 7:
-                Intent intent7 = new Intent(this, Tabla26.class);
+                Intent intent7 = new Intent(this, Tabla16.class);
                 startActivity(intent7);
+                break;
+            case 8:
+                Intent intent8 = new Intent(this, Tabla19.class);
+                startActivity(intent8);
+                break;
+            case 9:
+                Intent intent9 = new Intent(this, Tabla26.class);
+                startActivity(intent9);
                 break;
         }
 
@@ -216,7 +252,7 @@ public class NFCScan extends AppCompatActivity {
     }
 
     public static int chosenVRScene() {
-        return Constants.status;
+        return VRScene;
     }
 
     @Override

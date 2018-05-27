@@ -40,7 +40,6 @@ public class Tabla3a extends AppCompatActivity implements RateViewListener {
         setContentView(R.layout.tabla3a);
         mActivity = this;
         Constants.status++;
-        Constants.reward += 2;
 
        /* //Setup the number font
         font = Typeface.createFromAsset(getAssets(), "dinFont.ttf");

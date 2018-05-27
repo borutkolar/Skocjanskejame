@@ -18,17 +18,16 @@ public class Cestitamo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cestitamo);
 
-        if (Constants.status == 0) {
-            Constants.status = 1;
-        }
+        Constants.badges++;
 
         TextView cestitamoText1 = (TextView) findViewById(R.id.cestitamoText1);
         ImageView cestitamoImage = (ImageView) findViewById(R.id.cestitamoImage);
         TextView cestitamoText2 = (TextView) findViewById(R.id.cestitamoText2);
         TextView cestitamoText3 = (TextView) findViewById(R.id.cestitamoText3);
 
-        switch (Constants.status) {
+        switch (Constants.badges) {
             case 1:
+                Constants.status++;
                 cestitamoText1.setText(R.string.cestitamo1a);
                 cestitamoImage.setImageResource(R.drawable.znacka1);
                 cestitamoText2.setText(R.string.cestitamo1b);
@@ -39,8 +38,6 @@ public class Cestitamo extends AppCompatActivity {
                 cestitamoImage.setImageResource(R.drawable.znacka2);
                 cestitamoText2.setText(R.string.cestitamo3b);
                 Constants.alpha[1] = true;
-                Constants.alpha[8] = true;
-                Constants.alpha[9] = true;
                 break;
             case 3:
                 cestitamoText1.setText(R.string.cestitamo4a);
@@ -59,8 +56,6 @@ public class Cestitamo extends AppCompatActivity {
                 cestitamoImage.setImageResource(R.drawable.znacka5);
                 cestitamoText2.setText(R.string.cestitamo10b);
                 Constants.alpha[4] = true;
-                Constants.alpha[10] = true;
-                Constants.alpha[11] = true;
                 break;
             case 6:
                 cestitamoText1.setText(R.string.cestitamo16a);

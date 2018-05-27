@@ -1,28 +1,23 @@
 package android.parkskocjanskejame;
 
-
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.Functions;
 import android.parkskocjanskejame.utils.GPSTracker;
+import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.test.mock.MockPackageManager;
-import android.text.method.LinkMovementMethod;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class Status extends AppCompatActivity {
     GPSTracker gpsTracker;
@@ -59,6 +54,11 @@ public class Status extends AppCompatActivity {
         ImageView znacka11 = (ImageView) findViewById(R.id.znacka11);
         ImageView znacka12 = (ImageView) findViewById(R.id.znacka12);
 
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putBoolean("FirstVRScene", false);
+        editor.putBoolean("SecondVRScene", false);
+        editor.apply();
 
         final ImageView[] imageViews = {znacka1, znacka2, znacka3, znacka4, znacka5, znacka6, znacka7, znacka8, znacka9, znacka10, znacka11, znacka12};
 
@@ -70,9 +70,9 @@ public class Status extends AppCompatActivity {
         }
 
         TextView statusText2 = (TextView) findViewById(R.id.statusText2);
-        statusText2.setText(Integer.toString(Constants.status));
+        statusText2.setText(Integer.toString(Constants.badges));
 
-        if (Constants.status < 8) {
+        if (Constants.status < 10) {
             statusText2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
