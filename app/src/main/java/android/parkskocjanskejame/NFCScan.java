@@ -1,24 +1,25 @@
 package android.parkskocjanskejame;
 
+
 import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.nfc.NdefMessage;
+import android.content.SharedPreferences;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Parcelable;
 import android.parkskocjanskejame.utils.Constants;
 import android.parkskocjanskejame.utils.Functions;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import java.io.UnsupportedEncodingException;
+import com.borut.skocjanvr.UnityPlayerActivity;
 
 public class NFCScan extends AppCompatActivity {
     /*
@@ -87,6 +88,13 @@ public class NFCScan extends AppCompatActivity {
 
     @Override
     protected void onNewIntent(Intent intent) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        int status = prefs.getInt("Status", 0);
+        Log.d("TAG", "Status: " + status);
+
+        if (status == 2) Constants.status = 2;
+        if (status == 3) Constants.status = 3;
         /*Parcelable[] rawMessages = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
         NdefMessage[] messages = new NdefMessage[rawMessages.length];
         for (int i = 0; i < rawMessages.length; i++) {
@@ -102,15 +110,19 @@ public class NFCScan extends AppCompatActivity {
                 startActivity(intent0);
                 break;
             case 1:
-                Intent intent1 = new Intent(this, Tabla3a.class);
+                editor.putInt("Status", 2);
+                editor.apply();
+                Intent intent1 = new Intent(this, UnityPlayerActivity.class);
                 startActivity(intent1);
                 break;
             case 2:
-                Intent intent2 = new Intent(this, Tabla4.class);
+                editor.putInt("Status", 3);
+                editor.apply();
+                Intent intent2 = new Intent(this, UnityPlayerActivity.class);
                 startActivity(intent2);
                 break;
             case 3:
-                Intent intent3 = new Intent(this, Tabla7.class);
+                Intent intent3 = new Intent(this, Tabla3a.class);
                 startActivity(intent3);
                 break;
             case 4:
@@ -201,6 +213,10 @@ public class NFCScan extends AppCompatActivity {
         });
 
         alertDialog.show();
+    }
+
+    public static int chosenVRScene() {
+        return Constants.status;
     }
 
     @Override
