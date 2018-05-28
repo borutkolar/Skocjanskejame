@@ -74,7 +74,8 @@
             android:name=".ImageFS"
             android:theme="@style/fullscreen" />
         <activity
-            android:name=".MyWebView"/>
+            android:name=".MyWebView"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
