@@ -131,6 +131,7 @@ public class NFCScan extends AppCompatActivity {
                 editor.apply();
                 Constants.alpha[8] = true;
                 Constants.alpha[9] = true;
+                Constants.animalsAdded = true;
                 Functions.putBooleanArray(Constants.alpha, editor);
                 VRScene = 1;
                 Intent intent1 = new Intent(this, UnityPlayerActivity.class);
@@ -142,6 +143,7 @@ public class NFCScan extends AppCompatActivity {
                 editor.putInt("Badges", Constants.badges);
                 editor.putInt("Reward", Constants.reward + 2);
                 editor.apply();
+                Constants.animalsAdded = true;
                 Constants.alpha[10] = true;
                 Constants.alpha[11] = true;
                 Functions.putBooleanArray(Constants.alpha, editor);

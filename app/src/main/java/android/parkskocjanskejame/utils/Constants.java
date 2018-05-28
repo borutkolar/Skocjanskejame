@@ -5,6 +5,7 @@ package android.parkskocjanskejame.utils;
  */
 
 public class Constants {
+    public static boolean animalsAdded = false;
     public static int status = 0;
     public static int badges = 0;
     public static int reward = 0;

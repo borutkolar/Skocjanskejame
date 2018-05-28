@@ -103,4 +103,5 @@
 
     <string name="nfcTitle">NFC settings</string>
     <string name="nfcMessage">NFC is not enabled. Do you want to go to settings menu?</string>
+    <string name="vrNagrada">Animals added to your collection.</string>
 </resources>

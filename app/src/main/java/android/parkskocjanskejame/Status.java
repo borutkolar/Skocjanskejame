@@ -18,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Status extends AppCompatActivity {
     GPSTracker gpsTracker;
@@ -66,6 +67,12 @@ public class Status extends AppCompatActivity {
             if (Constants.alpha[i] == true) {
                 imageViews[i].setAlpha(1f);
                 statusPopup(imageViews[i], i);
+                
+                if(Constants.animalsAdded) {
+                    Toast.makeText(this, getString(R.string.vrNagrada),
+                            Toast.LENGTH_SHORT).show();
+                    Constants.animalsAdded = false;
+                }
             }
         }
 

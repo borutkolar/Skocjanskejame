@@ -102,4 +102,5 @@
 
     <string name="nfcTitle">NFC nastavitve</string>
     <string name="nfcMessage">NFC ni vklopljen. Ali želite obiskati nastavitve, da ga vklopite?</string>
+    <string name="vrNagrada">Nove zivali v tvoji zbirki.</string>
 </resources>
